@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Cours;
+use App\Entity\Event;
+use App\Entity\Partenaire;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,8 +15,11 @@ class FrontController extends AbstractController
      */
     public function index()
     {
+            $partenaires = $this->getDoctrine()->getRepository(Partenaire::class)->findAll();
+        $events = $this->getDoctrine()->getRepository(Event::class)->findAll();
         return $this->render('front/index.html.twig', [
-            'controller_name' => 'FrontController',
+            'partenaires'=>$partenaires,
+            'events' => $events
         ]);
     }
 
@@ -22,7 +28,11 @@ class FrontController extends AbstractController
      */
     public function allCour()
     {
-        return $this->render('front/cours/index.html.twig');
+        $cours = $this->getDoctrine()->getRepository(Cours::class)->findAll();
+
+        return $this->render('front/cours/index.html.twig', [
+            'cours'=>$cours
+        ]);
     }
 
     /**
