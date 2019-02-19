@@ -1,0 +1,203 @@
+{% extends 'layout.html.twig' %}
+
+{% block style %}
+    <!-- Google Fonts
+            ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/owl.carousel.css">
+    <link rel="stylesheet" href="/back/css/owl.theme.css">
+    <link rel="stylesheet" href="/back/css/owl.transitions.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/animate.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/normalize.css">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/meanmenu.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/main.css">
+    <!-- educate icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/educate-custon-icon.css">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/morrisjs/morris.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="/back/css/metisMenu/metisMenu-vertical.css">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="/back/css/calendar/fullcalendar.print.min.css">
+
+    <link rel="stylesheet" href="/back/css/editor/select2.css">
+    <link rel="stylesheet" href="/back/css/editor/datetimepicker.css">
+    <link rel="stylesheet" href="/back/css/editor/bootstrap-editable.css">
+    <link rel="stylesheet" href="/back/css/editor/x-editor-style.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="/back/css/data-table/bootstrap-editable.css">
+
+    <!-- modals CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/modals.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="/back/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
+
+{% endblock %}
+{% block body %}
+    <h1>Événements</h1>
+        <div class="modal-bootstrap shadow-inner res-mg-b-30">
+            <div class="modal-area-button">
+                <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl">Ajouter un évenement</a>
+            </div>
+        </div>
+    <div id="PrimaryModalhdbgcl" class="modal modal-edu-general default-popup-PrimaryModal fade in" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title">Ajouté un événement</h4>
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    {{ include('event/_form.html.twig') }}
+                </div>
+                <div class="modal-footer">
+                    <a data-dismiss="modal" href="#">Cancel</a>
+                    <a href="#">Process</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   <div class="table-wrapper">
+    <table cellspacing="0" id="example"  class="table display" style="margin: 2%; width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Photo</th>
+                <th>Etat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.libelle }}</td>
+                <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ event.lieu }}</td>
+                <td>{{ event.photo }}</td>
+                <td>{{ event.etat }}</td>
+                <td>
+                    <a href="{{ path('event_showAdmin', {'id': event.id}) }}">detail</a>
+                    <a href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
+                    {{ include('event/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+   </div>
+    <div class="modal-bootstrap shadow-inner res-mg-b-30">
+    </div>
+{% endblock %}
+{% block JS %}
+<!-- jquery
+           ============================================ -->
+    <script src="/back/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="/back/js/bootstrap.min.js"></script>
+    <!-- wow JS
+		============================================ -->
+    <script src="/back/js/wow.min.js"></script>
+    <!-- price-slider JS
+		============================================ -->
+    <script src="/back/js/jquery-price-slider.js"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="/back/js/jquery.meanmenu.js"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script src="/back/js/owl.carousel.min.js"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="/back/js/jquery.sticky.js"></script>
+
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="/back/js/jquery.scrollUp.min.js"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="/back/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/back/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <!-- metisMenu JS
+		============================================ -->
+    <script src="/back/js/metisMenu/metisMenu.min.js"></script>
+    <script src="/back/js/metisMenu/metisMenu-active.js"></script>
+
+    <!-- morrisjs JS
+		============================================ -->
+    <script src="/back/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/back/js/sparkline/jquery.charts-sparkline.js"></script>
+    <!-- calendar JS
+		============================================ -->
+    <script src="/back/js/calendar/moment.min.js"></script>
+    <script src="/back/js/calendar/fullcalendar.min.js"></script>
+    <script src="/back/js/calendar/fullcalendar-active.js"></script>
+		============================================ -->
+    <script src="/back/js/chart/jquery.peity.min.js"></script>
+    <script src="/back/js/peity/peity-active.js"></script>
+    <!-- tab JS
+		============================================ -->
+    <script src="/back/js/tab.js"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="/back/js/plugins.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="/back/js/main.js"></script>
+    <!-- tawk chat JS
+		============================================ -->
+    <script src="/back/js/tawk-chat.js"></script>
+
+
+{% endblock %}

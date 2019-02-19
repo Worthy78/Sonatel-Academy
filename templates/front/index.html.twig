@@ -64,10 +64,10 @@
         </h2>
         <div class="width-3rem height-4 rounded bg-white mx-auto"></div>
       </div>
-      {% for event in events %}
+      {% for event in events|slice(0, 3) %}
       <div class="col-md-4 mt-4">
         <div class="card">
-          <img class="card-img-top" src="/front/assets/img/360x220/1.jpg" alt="">
+          <img class="card-img-top" src="/uploads/events/{{ event.photo }}" alt="">
           <div class="card-body">
             <h4 class="h5">
               {{ event.libelle }}
@@ -139,7 +139,7 @@
       {% for partenaire in partenaires %}
       <div class="col-lg-3 col-sm-4 marginTop-30">
       <a href="{{ partenaire.link }}" target="_blank">
-        <img src="/front/assets/img/logos/2.png" alt="">
+        <img src="/uploads/partenaire/{{ partenaire.photo }}" alt="{{ partenaire.libelle }}" style="width:80px; height: 80px; margin: 0">
         </a>
       </div>
    {% endfor %}

@@ -5,6 +5,11 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    upload_event: '%kernel.project_dir%/public/uploads/events'
+    upload_cours: '%kernel.project_dir%/public/uploads/cours'
+    upload_equipe: '%kernel.project_dir%/public/uploads/equipe'
+    upload_partenaire: '%kernel.project_dir%/public/uploads/partenaire'
+    upload_blog: '%kernel.project_dir%/public/uploads/blog'
 
 services:
     # default configuration for services in *this* file

@@ -1,0 +1,212 @@
+{% extends 'layout.html.twig' %}
+
+{% block style %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/owl.carousel.css">
+    <link rel="stylesheet" href="/back/css/owl.theme.css">
+    <link rel="stylesheet" href="/back/css/owl.transitions.css">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/animate.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/normalize.css">
+    <!-- meanmenu icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/meanmenu.min.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/main.css">
+    <!-- educate icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/educate-custon-icon.css">
+    <!-- morrisjs CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/morrisjs/morris.css">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="/back/css/metisMenu/metisMenu-vertical.css">
+    <!-- calendar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="/back/css/calendar/fullcalendar.print.min.css">
+    <!-- x-editor CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/editor/select2.css">
+    <link rel="stylesheet" href="/back/css/editor/datetimepicker.css">
+    <link rel="stylesheet" href="/back/css/editor/bootstrap-editable.css">
+    <link rel="stylesheet" href="/back/css/editor/x-editor-style.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="/back/css/data-table/bootstrap-editable.css">
+    <link rel="stylesheet" href="/back/css/modals.css">
+
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/style.css">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/back/css/responsive.css">
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="/back/js/vendor/modernizr-2.8.3.min.js"></script>
+{% endblock %}
+{% block body %}
+    <!-- Static Table Start -->
+    <div class="modal-bootstrap shadow-inner res-mg-b-30">
+        <div class="modal-area-button">
+            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl">Ajouter un partenaire</a>
+        </div>
+    </div>
+    <div id="PrimaryModalhdbgcl" class="modal modal-edu-general default-popup-PrimaryModal fade in" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title">Ajouté un événement</h4>
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    {{ include('partenaire/_form.html.twig') }}
+                </div>
+                <div class="modal-footer">
+                    <a data-dismiss="modal" href="#">Cancel</a>
+                    <a href="#">Process</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-table-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <h1>Nos partenaires<span class="table-project-n"></h1>
+                            </div>
+                        </div>
+                        <div class="sparkline13-graph">
+                            <div class="datatable-dashv1-list custom-datatable-overright">
+                                <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="id">ID</th>
+                                        <th data-field="name" data-editable="true">Logo</th>
+                                        <th data-field="email" data-editable="true">Désignation</th>
+                                        <th data-field="phone" data-editable="true">Site</th>
+                                        <th data-field="action">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for partenaire in partenaires %}
+                                    <tr>
+                                        <td></td>
+                                        <td>{{ partenaire.id }}</td>
+                                        <td><img src="/uploads/partenaire/{{ partenaire.photo }}" alt=""></td>
+                                        <td>{{ partenaire.libelle }}</td>
+                                        <td>{{ partenaire.link }}</td>
+                                        <td>    <a href="{{ path('partenaire_edit', {'id': partenaire.id}) }}">modifier</a>
+                                            <a href="{{ path('partenaire_show', {'id': partenaire.id}) }}">detail</a>
+                                            {{ include('partenaire/_delete_form.html.twig') }}
+                                        </td>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Static Table End -->
+</div>
+{% endblock %}
+{% block JS %}
+<!-- jquery
+    ============================================ -->
+<script src="/back/js/vendor/jquery-1.12.4.min.js"></script>
+<!-- bootstrap JS
+    ============================================ -->
+<script src="/back/js/bootstrap.min.js"></script>
+<!-- wow JS
+    ============================================ -->
+<script src="/back/js/wow.min.js"></script>
+<!-- price-slider JS
+    ============================================ -->
+<script src="/back/js/jquery-price-slider.js"></script>
+<!-- meanmenu JS
+    ============================================ -->
+<script src="/back/js/jquery.meanmenu.js"></script>
+<!-- owl.carousel JS
+    ============================================ -->
+<script src="/back/js/owl.carousel.min.js"></script>
+<!-- sticky JS
+    ============================================ -->
+<script src="/back/js/jquery.sticky.js"></script>
+<!-- scrollUp JS
+    ============================================ -->
+<script src="/back/js/jquery.scrollUp.min.js"></script>
+<!-- mCustomScrollbar JS
+    ============================================ -->
+<script src="/back/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/back/js/scrollbar/mCustomScrollbar-active.js"></script>
+<!-- metisMenu JS
+    ============================================ -->
+<script src="/back/js/metisMenu/metisMenu.min.js"></script>
+<script src="/back/js/metisMenu/metisMenu-active.js"></script>
+<!-- data table JS
+    ============================================ -->
+<script src="/back/js/data-table/bootstrap-table.js"></script>
+<script src="/back/js/data-table/tableExport.js"></script>
+<script src="/back/js/data-table/data-table-active.js"></script>
+<script src="/back/js/data-table/bootstrap-table-editable.js"></script>
+<script src="/back/js/data-table/bootstrap-editable.js"></script>
+<script src="/back/js/data-table/bootstrap-table-resizable.js"></script>
+<script src="/back/js/data-table/colResizable-1.5.source.js"></script>
+<script src="/back/js/data-table/bootstrap-table-export.js"></script>
+<!--  editable JS
+    ============================================ -->
+<script src="/back/js/editable/jquery.mockjax.js"></script>
+<script src="/back/js/editable/mock-active.js"></script>
+<script src="/back/js/editable/select2.js"></script>
+<script src="/back/js/editable/moment.min.js"></script>
+<script src="/back/js/editable/bootstrap-datetimepicker.js"></script>
+<script src="/back/js/editable/bootstrap-editable.js"></script>
+<script src="/back/js/editable/xediable-active.js"></script>
+<!-- Chart JS
+    ============================================ -->
+<script src="/back/js/chart/jquery.peity.min.js"></script>
+<script src="/back/js/peity/peity-active.js"></script>
+<!-- tab JS
+    ============================================ -->
+<script src="/back/js/tab.js"></script>
+<!-- plugins JS
+    ============================================ -->
+<script src="/back/js/plugins.js"></script>
+<!-- main JS
+    ============================================ -->
+<script src="/back/js/main.js"></script>
+<!-- tawk chat JS
+    ============================================ -->
+<script src="/back/js/tawk-chat.js"></script>
+{% endblock %}
