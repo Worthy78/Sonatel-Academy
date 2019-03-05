@@ -26,487 +26,57 @@
 <section class="padding-y-60 bg-light-v2">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/1.jpg" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13" style="margin-top: -13px;">
-             Best selling
+      {% for cour in cours %}
+        {% if cour.module.filiere.libelle == 'Data Artisan'%}
+          <div class="col-lg-4 col-md-6 marginTop-30">
+            <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
+              <img class="card-img-top" src="/front/assets/img/360x220/1.jpg" alt="">
+              <div class="card-body">
+                {% if cour.typecour.libelle == 'Cours' %}
+                  <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13" style="margin-top: -13px;">
+             {{ cour.typecour.libelle }}
            </span>
-            <a href="page-sp-all-courcess.html#" class="h5">
-              The Web Developer Bootcamp
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Andrew Mead
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$180</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/2.jpg" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-danger text-white" data-offset-top="-13" style="margin-top: -13px;">
-             Trending
+                {% elseif cour.typecour.libelle == 'Tuto' %}
+                  <span class="badge position-absolute top-0 bg-danger text-white" data-offset-top="-13" style="margin-top: -13px;">
+             {{ cour.typecour.libelle }}
            </span>
-            <a href="page-sp-all-courcess.html#" class="h5">
-              Visual Basic Essential Training For Begainers
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Andrew Mead, John Doe
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
+                {% endif %}
+                <a href="page-sp-all-courcess.html#" class="h5">
+                  {{ cour.libelle }}
+                </a>
+                <p class="my-3">
+                  <i class="ti-user mr-2"></i>
+                  {{ cour.module.libelle }}
+                </p>
+                <p class="mb-0">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <span class="text-dark">5</span>
+                  <span>(4578)</span>
+                </p>
+              </div>
+              <div class="card-footer media align-items-center justify-content-between">
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-1">
+                    <i class="ti-headphone small mr-2"></i>
+                    46 lectures
+                  </li>
+                  <li class="mb-1">
+                    <i class="ti-time small mr-2"></i>
+                    27.5 hours
+                  </li>
+                </ul>
+                <h4 class="h5 text-right">
+                  <span class="text-primary">$180</span>
+                </h4>
+              </div>
+            </div>
           </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$10</span>
-              <span class="d-block text-gray"><s>$129</s></span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/3.jpg" alt="">
-          <div class="card-body">
-            <a href="page-sp-all-courcess.html#" class="h5">
-              Programming Real-World Examples
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Anthony Broks
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$375</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/4.jpg" alt="">
-          <div class="card-body">
-            <a href="page-sp-all-courcess.html#" class="h5">
-              Programming Real-World Examples
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Asif vai
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$180</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/5.jpg" alt="">
-          <div class="card-body">
-            <a href="page-sp-all-courcess.html#" class="h5">
-              Java 8 Essential Training
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Jonathon
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$249</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/6.jpg" alt="">
-          <div class="card-body">
-            <a href="page-sp-all-courcess.html#" class="h5">
-              C++ Essential Training
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Jonathon
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-success font-weight-bold">Free</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/1.jpg" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13" style="margin-top: -13px;">
-             Best selling
-           </span>
-            <a href="page-sp-all-courcess.html#" class="h5">
-              The Web Developer Bootcamp
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Andrew Mead
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$180</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/2.jpg" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-danger text-white" data-offset-top="-13" style="margin-top: -13px;">
-             Trending
-           </span>
-            <a href="page-sp-all-courcess.html#" class="h5">
-              Visual Basic Essential Training For Begainers
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Andrew Mead, John Doe
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$10</span>
-              <span class="d-block text-gray"><s>$129</s></span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/3.jpg" alt="">
-          <div class="card-body">
-            <a href="page-sp-all-courcess.html#" class="h5">
-              Programming Real-World Examples
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Anthony Broks
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$375</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/4.jpg" alt="">
-          <div class="card-body">
-            <a href="page-sp-all-courcess.html#" class="h5">
-              Programming Real-World Examples
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Asif vai
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$180</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/5.jpg" alt="">
-          <div class="card-body">
-            <a href="page-sp-all-courcess.html#" class="h5">
-              Java 8 Essential Training
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Jonathon
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$249</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/6.jpg" alt="">
-          <div class="card-body">
-            <a href="page-sp-all-courcess.html#" class="h5">
-              C++ Essential Training
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              Jonathon
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-success font-weight-bold">Free</span>
-            </h4>
-          </div>
-        </div>
-      </div>
+        {% endif %}
+      {% endfor %}
       
       <div class="col-12 marginTop-70">
         <ul class="pagination pagination-primary justify-content-center">

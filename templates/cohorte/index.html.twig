@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cohorte index{% endblock %}
+
+{% block body %}
+    <h1>Cohorte index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Promotion</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cohorte in cohortes %}
+            <tr>
+                <td>{{ cohorte.id }}</td>
+                <td>{{ cohorte.libelle }}</td>
+                <td>{{ cohorte.promotion }}</td>
+                <td>
+                    <a href="{{ path('cohorte_show', {'id': cohorte.id}) }}">show</a>
+                    <a href="{{ path('cohorte_edit', {'id': cohorte.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cohorte_new') }}">Create new</a>
+{% endblock %}

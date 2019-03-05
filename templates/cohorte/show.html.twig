@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cohorte{% endblock %}
+
+{% block body %}
+    <h1>Cohorte</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cohorte.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ cohorte.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Promotion</th>
+                <td>{{ cohorte.promotion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cohorte_index') }}">back to list</a>
+
+    <a href="{{ path('cohorte_edit', {'id': cohorte.id}) }}">edit</a>
+
+    {{ include('cohorte/_delete_form.html.twig') }}
+{% endblock %}

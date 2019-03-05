@@ -40,7 +40,10 @@ class FrontController extends AbstractController
      */
     public function devCour()
     {
-        return $this->render('front/cours/dev.html.twig');
+        $cours = $this->getDoctrine()->getRepository(Cours::class)->findAll();
+        return $this->render('front/cours/dev.html.twig', [
+            'cours'=>$cours
+        ]);
     }
 
     /**
@@ -48,7 +51,10 @@ class FrontController extends AbstractController
      */
     public function refCour()
     {
-        return $this->render('front/cours/ref.html.twig');
+        $cours = $this->getDoctrine()->getRepository(Cours::class)->findAll();
+        return $this->render('front/cours/ref.html.twig', [
+            'cours'=>$cours
+        ]);
     }
 
     /**
@@ -56,7 +62,10 @@ class FrontController extends AbstractController
      */
     public function dataCour()
     {
-        return $this->render('front/cours/data.html.twig');
+        $cours = $this->getDoctrine()->getRepository(Cours::class)->findAll();
+        return $this->render('front/cours/data.html.twig', [
+            'cours'=>$cours
+        ]);
     }
 
     /**

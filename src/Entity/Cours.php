@@ -41,6 +41,21 @@ class Cours
      */
     private $data;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $contenu;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $auteur;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +117,42 @@ class Cours
     public function setData(\DateTimeInterface $data): self
     {
         $this->data = $data;
+
+        return $this;
+    }
+
+    public function getContenu(): ?string
+    {
+        return $this->contenu;
+    }
+
+    public function setContenu(string $contenu): self
+    {
+        $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    public function getAuteur(): ?string
+    {
+        return $this->auteur;
+    }
+
+    public function setAuteur(string $auteur): self
+    {
+        $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

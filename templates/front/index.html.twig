@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<section class="padding-y-100 flex-center jarallax height-100vh" data-dark-overlay="5" style="background: none no-repeat;" data-jarallax-original-styles="background:url(/front/assets/img/1920x800/4.jpg) no-repeat">
+<section class="padding-y-100 flex-center jarallax height-100vh" data-dark-overlay="5" style="background: none no-repeat;" data-jarallax-original-styles="background:url(/front/assets/img/img/4.jpg) no-repeat">
      <div class="container">
        <div class="row">
          <div class="col-12 text-center text-white marginBottom-80">
@@ -54,10 +54,11 @@
        </div> <!-- END row-->
      </div> <!-- END container-->
    <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;"><div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url(&quot;file:///var/www/project/Sonatel%20Academy/educati/assets/img/1920x800/4.jpg&quot;); position: fixed; top: 0px; left: 0px; width: 1351px; height: 1007px; overflow: hidden; pointer-events: none; margin-top: -318px; transform: translate3d(0px, 106px, 0px);"></div></div></section>
+  {% if events %}
 <section class="padding-y-100" data-primary-overlay="7" style="background:url(/front/assets/img/1920/962.jpg) no-repeat">
   <div class="container">
     <div class="row">
-     
+
       <div class="col-12 text-center text-white mb-md-4">
         <h2 class="mb-4">
           Événements à venir
@@ -95,8 +96,62 @@
     </div> <!-- END row-->
   </div> <!-- END container-->
 </section>
+  {% else %}
+  {% endif %}
 
-
+  <section class="padding-y-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-md-4">
+          <h2 class="mb-4">
+            Academy Life
+          </h2>
+          <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
+        </div>
+      </div> <!-- END row-->
+      <div class="row">
+        <div class="col-lg-6 marginTop-30">
+          <img class="w-100" src="/front/assets/img/555x490/1.jpg" alt="">
+        </div>
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-md-6 marginTop-30">
+              <div class="position-relative">
+                <img class="w-100" src="/front/assets/img/262x230/1.jpg" alt="">
+                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
+                  <i class="ti-control-play text-primary"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 marginTop-30">
+              <div class="position-relative">
+                <img class="w-100" src="/front/assets/img/262x230/2.jpg" alt="">
+                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
+                  <i class="ti-control-play text-primary"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 marginTop-30">
+              <div class="position-relative">
+                <img class="w-100" src="/front/assets/img/262x230/3.jpg" alt="">
+                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
+                  <i class="ti-control-play text-primary"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 marginTop-30">
+              <div class="position-relative">
+                <img class="w-100" src="/front/assets/img/262x230/4.jpg" alt="">
+                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
+                  <i class="ti-control-play text-primary"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- END row-->
+    </div> <!-- END container-->
+  </section>
 <section class="padding-y-100 bg-cover" data-dark-overlay="6" style="background:url(/front/assets/img/college/2.jpg) no-repeat">
   <div class="container">
     <div class="row text-center text-white">
@@ -132,7 +187,107 @@
     </div> <!-- END row-->
   </div> <!-- END container-->
 </section>
+  <section class="paddingTop-100">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="mb-4">
+            Galerie
+          </h2>
+          <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
+        </div>
+      </div> <!-- END row-->
 
+      <div class="row marginTop-60">
+        <div class="owl-carousel arrow-edge arrow-black owl-loaded owl-drag" data-space="0" data-items="4" data-arrow="true" data-tablet-items="2" data-mobile-items="1">
+
+
+
+
+
+
+
+          <div class="owl-stage-outer null"><div class="owl-stage" style="transform: translate3d(-3377px, 0px, 0px); transition: all 0.8s ease 0s; width: 5067px;"><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/5.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/5.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/3.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/3.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/5.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/5.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item active" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item cloned active" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item cloned active" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item cloned active" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/3.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/3.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
+                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
+                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                    <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                  </div>
+                </div></div></div></div><div class="owl-nav"><div class="owl-prev"><i class="ti-angle-left"></i></div><div class="owl-next"><i class="ti-angle-right"></i></div></div><div class="owl-dots false disabled"></div></div>
+      </div> <!-- END row-->
+
+    </div> <!-- END container-->
+  </section>
+  {% if partenaires %}
 <section class="paddingTop-70 paddingBottom-100 bg-light-v3">
   <div class="container">
     <div class="row text-center align-items-center">
@@ -146,6 +301,8 @@
     </div> <!-- END row-->
   </div> <!-- END container--> 
 </section>
+  {% else %}
+  {% endif %}
 
 
 
@@ -160,18 +317,24 @@
           Rester informé de tout ce qui passe à l'academy
         </p>
       </div>
+
       <div class="col-md-6 my-4 wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+        <form action="{{ path('abonne_newlester_new') }}" method="post">
       <div class="input-group">
         <div class="input-group-prepend">
           <div class="input-group-text ti-email bg-white"></div>
         </div>
-        <input type="text" placeholder="Entrer votre email" class="form-control py-3 pl-0 border-white" required="">
+        <input type="text" placeholder="Entrer votre email" class="form-control py-3 pl-0 border-white" required="" name="email">
         <div class="input-group-append">
           <button class="btn btn-primary" type="submit">S'inscrire</button>
         </div>
+
       </div>
+        </form>
       </div>
+
     </div> <!-- END row-->
     </div>
   </section>
 {% endblock %}
+

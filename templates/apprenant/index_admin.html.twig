@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Apprenant index{% endblock %}
+
+{% block body %}
+    <h1>Apprenants</h1>
+
+    <div class="contacts-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                {% for apprenant in apprenants %}
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="student-inner-std res-mg-b-30">
+                        <div class="student-img">
+                            <img src="/back/img/student/1.jpg" alt="">
+                        </div>
+                        <div class="student-dtl">
+                            <h2>{{ apprenant.prenom }} {{ apprenant.nom }}</h2>
+                            <p class="dp">{{ apprenant.fili�ere.libelle }}</p>
+                            <p class="dp">Promotion : <b>{{ apprenant.cohorte.promotion }}</b></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <a href="{{ path('apprenant_new') }}">Create new</a>
+{% endblock %}

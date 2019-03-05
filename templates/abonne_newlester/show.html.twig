@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AbonneNewlester{% endblock %}
+
+{% block body %}
+    <h1>AbonneNewlester</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ abonne_newlester.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ abonne_newlester.email }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ abonne_newlester.date ? abonne_newlester.date|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('abonne_newlester_index') }}">back to list</a>
+
+    <a href="{{ path('abonne_newlester_edit', {'id': abonne_newlester.id}) }}">edit</a>
+
+    {{ include('abonne_newlester/_delete_form.html.twig') }}
+{% endblock %}

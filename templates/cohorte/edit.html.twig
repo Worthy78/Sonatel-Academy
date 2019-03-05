@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Cohorte{% endblock %}
+
+{% block body %}
+    <h1>Edit Cohorte</h1>
+
+    {{ include('cohorte/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('cohorte_index') }}">back to list</a>
+
+    {{ include('cohorte/_delete_form.html.twig') }}
+{% endblock %}

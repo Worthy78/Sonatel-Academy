@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\FiliereRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CohorteRepository")
  */
-class Filiere
+class Cohorte
 {
     /**
      * @ORM\Id()
@@ -24,23 +24,17 @@ class Filiere
     private $libelle;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $timer;
+    private $promotion;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Module", mappedBy="filiere")
-     */
-    private $modules;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Apprenant", mappedBy="fili�sere")
+     * @ORM\OneToMany(targetEntity="App\Entity\Apprenant", mappedBy="cohorte")
      */
     private $apprenants;
 
     public function __construct()
     {
-        $this->modules = new ArrayCollection();
         $this->apprenants = new ArrayCollection();
     }
 
@@ -61,45 +55,14 @@ class Filiere
         return $this;
     }
 
-    public function getTimer(): ?string
+    public function getPromotion(): ?string
     {
-        return $this->timer;
+        return $this->promotion;
     }
 
-    public function setTimer(string $timer): self
+    public function setPromotion(?string $promotion): self
     {
-        $this->timer = $timer;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Module[]
-     */
-    public function getModules(): Collection
-    {
-        return $this->modules;
-    }
-
-    public function addModule(Module $module): self
-    {
-        if (!$this->modules->contains($module)) {
-            $this->modules[] = $module;
-            $module->setFiliere($this);
-        }
-
-        return $this;
-    }
-
-    public function removeModule(Module $module): self
-    {
-        if ($this->modules->contains($module)) {
-            $this->modules->removeElement($module);
-            // set the owning side to null (unless already changed)
-            if ($module->getFiliere() === $this) {
-                $module->setFiliere(null);
-            }
-        }
+        $this->promotion = $promotion;
 
         return $this;
     }
@@ -116,7 +79,7 @@ class Filiere
     {
         if (!$this->apprenants->contains($apprenant)) {
             $this->apprenants[] = $apprenant;
-            $apprenant->setFili�ere($this);
+            $apprenant->setCohorte($this);
         }
 
         return $this;
@@ -127,8 +90,8 @@ class Filiere
         if ($this->apprenants->contains($apprenant)) {
             $this->apprenants->removeElement($apprenant);
             // set the owning side to null (unless already changed)
-            if ($apprenant->getFili�ere() === $this) {
-                $apprenant->setFili�ere(null);
+            if ($apprenant->getCohorte() === $this) {
+                $apprenant->setCohorte(null);
             }
         }
 

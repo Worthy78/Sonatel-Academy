@@ -37,7 +37,7 @@
   </head>
   
   <body>
-    <header class="site-header bg-dark text-white-0_5">        
+    <header class="site-header bg-dark text-white-0_5">
     <div class="container">
       <div class="row align-items-center justify-content-between mx-0">
         <ul class="list-inline d-none d-lg-block mb-0">
@@ -170,7 +170,7 @@
 -->              </li>
 
             <li class="nav-item nav-item__has-megamenu">
-              <a class="nav-link" href="index-university.html#" data-toggle="dropdown">CVThéque</a>
+              <a class="nav-link" href="{{ path('apprenant_index') }}">CVThéque</a>
               <!--<div class="dropdown-menu p-2 p-md-4">
                 <div class="row mx-0">
                   <div class="col-md-3">
@@ -292,7 +292,7 @@
         </ul>
       </div>	
     </div>
-  </div> <!-- END container-->		
+  </div> <!-- END container-->
   </nav>
   <div class="site-search">
    <div class="site-search__close bg-black-0_8"></div>
@@ -313,7 +313,7 @@
       <div class="row">
 
         <div class="col-lg-3 col-md-6 mt-5">
-         <img src="/front/assets/img/logo-white.png" alt="Logo">
+         <img src="/logo/logo.png" alt="Logo">
          <div class="margin-y-40">
            <p>
             Nunc placerat mi id nisi interdm they mtolis. Praesient is haretra justo ught scel erisque placer.
@@ -358,13 +358,13 @@
         </div>
 
         <div class="col-lg-4 col-md-6 mt-5">
-          <h4 class="h5 text-white">Newslatter</h4>
+          <h4 class="h5 text-white">Newsletter</h4>
           <div class="width-3rem bg-primary height-3 mt-3"></div>
           <div class="marginTop-40">
             <p class="mb-4">Subscribe to get update and information. Don't worry, we won't send spam!</p>
-            <form class="marginTop-30" action="" method="POST">
+            <form class="marginTop-30" action="{{ path('abonne_newlester_new') }}" method="POST">
               <div class="input-group">
-                <input type="text" placeholder="Entrer votre email" class="form-control py-3 border-white" required="">
+                <input type="text" placeholder="Entrer votre email" class="form-control py-3 border-white" required="" name="email">
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="submit">S'inscrire</button>
                 </div>
@@ -379,7 +379,7 @@
 
   <div class="footer-bottom bg-black-0_9 py-5 text-center">
     <div class="container">
-      <p class="text-white-0_5 mb-0">© 2018 Sonatel Academy. All rights reserved. Created by <a href="http://www.kangamlabs.com" target="_blunk">Kangam-Labs</a></p>
+      <p class="text-white-0_5 mb-0">© 2018 Sonatel Academy. All rights reserved. Created by <a href="http://www.kangamlabs.com" target="_blank">Kangam-Labs</a></p>
     </div>
   </div>  <!-- END footer-bottom-->
 </footer>

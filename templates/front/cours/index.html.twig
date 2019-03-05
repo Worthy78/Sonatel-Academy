@@ -88,10 +88,16 @@
         <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
           <img class="card-img-top" src="/front/assets/img/360x220/1.jpg" alt="">
           <div class="card-body">
-           <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13" style="margin-top: -13px;">
+            {% if cour.typecour.libelle == 'Cours' %}
+              <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13" style="margin-top: -13px;">
              {{ cour.typecour.libelle }}
            </span>
-            <a href="page-sp-all-courcess.html#" class="h5">
+            {% elseif cour.typecour.libelle == 'Tuto' %}
+              <span class="badge position-absolute top-0 bg-danger text-white" data-offset-top="-13" style="margin-top: -13px;">
+             {{ cour.typecour.libelle }}
+           </span>
+            {% endif %}
+            <a href="{{ path('cours_show', {'id': cour.id}) }}" class="h5">
               {{ cour.libelle }}
             </a>
             <p class="my-3">

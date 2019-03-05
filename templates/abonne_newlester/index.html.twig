@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AbonneNewlester index{% endblock %}
+
+{% block body %}
+    <h1>AbonneNewlester index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for abonne_newlester in abonne_newlesters %}
+            <tr>
+                <td>{{ abonne_newlester.id }}</td>
+                <td>{{ abonne_newlester.email }}</td>
+                <td>{{ abonne_newlester.date ? abonne_newlester.date|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('abonne_newlester_show', {'id': abonne_newlester.id}) }}">show</a>
+                    <a href="{{ path('abonne_newlester_edit', {'id': abonne_newlester.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('abonne_newlester_new') }}">Create new</a>
+{% endblock %}
