@@ -53,11 +53,25 @@ class CoursController extends AbstractController
      */
     public function show(Cours $cour, CoursRepository $coursRepository): Response
     {
+     //   $modules = $this->$coursRepository->findBy('module'== $cour->getModule());
         return $this->render('cours/show.html.twig', [
             'cour' => $cour,
             'cours' => $coursRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/detail/{id}", name="cours_show_details", methods={"GET"})
+     */
+    public function showDetails(Cours $cour, CoursRepository $coursRepository): Response
+    {
+        //   $modules = $this->$coursRepository->findBy('module'== $cour->getModule());
+        return $this->render('cours/show_details_front.html.twig', [
+            'cour' => $cour,
+            'cours' => $coursRepository->findAll(),
+        ]);
+    }
+
 
     /**
      * @Route("/{id}/edit", name="cours_edit", methods={"GET","POST"})

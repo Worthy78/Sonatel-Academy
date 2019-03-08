@@ -1,5 +1,4 @@
 {% extends 'layout.html.twig' %}
-
 {% block style %}
     <!-- Google Fonts
             ============================================ -->
@@ -75,23 +74,22 @@
 
 {% endblock %}
 {% block body %}
-    <h1>Événements</h1>
-        <div class="modal-bootstrap shadow-inner res-mg-b-30">
-            <div class="modal-area-button">
-                <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl">Ajouter un évenement</a>
-            </div>
+    <div class="modal-bootstrap shadow-inner res-mg-b-30">
+        <div class="modal-area-button">
+            <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl">Ajouter</a>
         </div>
+    </div>
     <div id="PrimaryModalhdbgcl" class="modal modal-edu-general default-popup-PrimaryModal fade in" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header header-color-modal bg-color-1">
-                    <h4 class="modal-title">Ajouté un événement</h4>
+                    <h4 class="modal-title">Nouveau</h4>
                     <div class="modal-close-area modal-close-df">
                         <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
                     </div>
                 </div>
                 <div class="modal-body">
-                    {{ include('event/_form.html.twig') }}
+                    {{ form(form) }}
                 </div>
                 <div class="modal-footer">
                     <a data-dismiss="modal" href="#">Cancel</a>
@@ -100,9 +98,9 @@
             </div>
         </div>
     </div>
-   <div class="table-wrapper">
-    <table cellspacing="0" id="example"  class="table display" style="margin: 2%; width:100%">
-        <thead>
+    <div class="table-wrapper">
+        <table cellspacing="0" id="example"  class="table display" style="margin: 2%; width:100%">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Libelle</th>
@@ -112,36 +110,36 @@
                 <th>Etat</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for event in events %}
-            <tr>
-                <td>{{ event.id }}</td>
-                <td>{{ event.libelle }}</td>
-                <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.lieu }}</td>
-                <td>{{ event.photo }}</td>
-                <td>{{ event.etat }}</td>
-                <td>
-                    <a href="{{ path('event_showAdmin', {'id': event.id}) }}">detail</a>
-                    <a href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
-                    {{ include('event/_delete_form.html.twig') }}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-   </div>
+            </thead>
+            <tbody>
+            {% for cour in cours %}
+                <tr>
+                    <td>{{ cour.id }}</td>
+                    <td>{{ cour.libelle }}</td>
+                    <td>{{ cour.data ? cour.data|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ cour.auteur }}</td>
+                    <td>{{ cour.photo }}</td>
+                    <td>{{ cour.description }}</td>
+                    <td>
+                        <a href="{{ path('cours_show', {'id': cour.id}) }}">detail</a>
+                        <a href="{{ path('cours_edit', {'id': cour.id}) }}">Modifier</a>
+                        {{ include('cours/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <div class="modal-bootstrap shadow-inner res-mg-b-30">
     </div>
 {% endblock %}
 {% block JS %}
-<!-- jquery
-           ============================================ -->
+    <!-- jquery
+               ============================================ -->
     <script src="/back/js/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
 		============================================ -->

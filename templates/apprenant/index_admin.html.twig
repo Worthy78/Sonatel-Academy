@@ -1,18 +1,42 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Apprenant index{% endblock %}
 
 {% block body %}
+    <div class="modal-bootstrap shadow-inner res-mg-b-30 row ">
     <h1>Apprenants</h1>
+    <div class="modal-area-button">
+        <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl">Ajouter un apprenant</a>
+    </div>
+</div>
+    <div id="PrimaryModalhdbgcl" class="modal modal-edu-general default-popup-PrimaryModal fade in" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title">Ajouté un événement</h4>
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    {{ include('event/_form.html.twig') }}
+                </div>
+                <div class="modal-footer">
+                    <a data-dismiss="modal" href="#">Cancel</a>
+                    <a href="#">Process</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="contacts-area mg-b-15">
         <div class="container-fluid">
             <div class="row">
                 {% for apprenant in apprenants %}
+                <a href="{{ path('apprenant_show', {'id': apprenant.id}) }}">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="student-inner-std res-mg-b-30">
                         <div class="student-img">
-                            <img src="/back/img/student/1.jpg" alt="">
+                            <img src="/uploads/apprenant/{{ apprenant.photo }}" alt="">
                         </div>
                         <div class="student-dtl">
                             <h2>{{ apprenant.prenom }} {{ apprenant.nom }}</h2>
@@ -21,10 +45,10 @@
                         </div>
                     </div>
                 </div>
+                </a>
                 {% endfor %}
             </div>
         </div>
     </div>
-
     <a href="{{ path('apprenant_new') }}">Create new</a>
 {% endblock %}

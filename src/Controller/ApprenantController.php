@@ -35,6 +35,14 @@ class ApprenantController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file1 = $apprenant->getPhoto();
+            $file2 = $apprenant->getCv();
+            $fileName1 = md5(uniqid()).'.'.$file1->guessExtension();
+            $fileName2 = md5(uniqid()).'.'.$file2->guessExtension();
+            $file1->move($this->getParameter('upload_apprenant'), $fileName1);
+            $file2->move($this->getParameter('upload_apprenant_cv'), $fileName2);
+            $apprenant->setPhoto($fileName1);
+            $apprenant->setcv($fileName2);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($apprenant);
             $entityManager->flush();
@@ -55,6 +63,16 @@ class ApprenantController extends AbstractController
     public function show(Apprenant $apprenant): Response
     {
         return $this->render('apprenant/show.html.twig', [
+            'apprenant' => $apprenant,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}", name="apprenant_show_front", methods={"GET"})
+     */
+    public function showFront(Apprenant $apprenant): Response
+    {
+        return $this->render('apprenant/show_front.html.twig', [
             'apprenant' => $apprenant,
         ]);
     }

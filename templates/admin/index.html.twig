@@ -1,7 +1,163 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block style %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/owl.carousel.css">
+    <link rel="stylesheet" href="/back/css/owl.theme.css">
+    <link rel="stylesheet" href="/back/css/owl.transitions.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/animate.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/normalize.css">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/meanmenu.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/main.css">
+    <!-- educate icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/educate-custon-icon.css">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/morrisjs/morris.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="/back/css/metisMenu/metisMenu-vertical.css">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="/back/css/calendar/fullcalendar.print.min.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="/back/css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="/back/js/vendor/modernizr-2.8.3.min.js"></script>
 
+{% endblock %}
 {% block body %}
+    <div class="product-status mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <h4>Library List</h4>
+                        <div class="add-product">
+                            <a href="#">Add Library</a>
+                        </div>
+                        <div class="asset-inner">
+                            <table>
+                                <tbody><tr>
+                                    <th>No</th>
+                                    <th>Image</th>
+                                    <th>Nom de l'événement</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                                {% for event in events %}
+                                    <tr>
+                                        <td>{{ event.id }}</td>
+                                        <td><img src="img/product/book-1.jpg" alt=""></td>
+                                        <td>{{ event.libelle }}</td>
+                                        <td>
+                                            <button class="pd-setting">{{ event.etat }}</button>
+                                        </td>
+                                        <td>{{ event.date|date("m/d/Y")  }} à {{ event.date|date("H:m") }}</td>
+                                        <td>
+                                            <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody></table>
+                        </div>
+                        <div class="custom-pagination">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block JS %}
+
+
+    <!-- jquery
+		============================================ -->
+    <script src="/back/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="/back/js/bootstrap.min.js"></script>
+    <!-- wow JS
+		============================================ -->
+    <script src="/back/js/wow.min.js"></script>
+    <!-- price-slider JS
+		============================================ -->
+    <script src="/back/js/jquery-price-slider.js"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="/back/js/jquery.meanmenu.js"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script src="/back/js/owl.carousel.min.js"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="/back/js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="/back/js/jquery.scrollUp.min.js"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="/back/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/back/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <!-- metisMenu JS
+		============================================ -->
+    <script src="/back/js/metisMenu/metisMenu.min.js"></script>
+    <script src="/back/js/metisMenu/metisMenu-active.js"></script>
+    <!-- morrisjs JS
+		============================================ -->
+    <script src="/back/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/back/js/sparkline/jquery.charts-sparkline.js"></script>
+    <!-- calendar JS
+		============================================ -->
+    <script src="/back/js/calendar/moment.min.js"></script>
+    <script src="/back/js/calendar/fullcalendar.min.js"></script>
+    <script src="/back/js/calendar/fullcalendar-active.js"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="/back/js/plugins.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="/back/js/main.js"></script>
+    <!-- tawk chat JS
+		============================================ -->
+    <script src="/back/js/tawk-chat.js"></script>
 
 {% endblock %}

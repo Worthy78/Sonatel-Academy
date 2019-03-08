@@ -6,6 +6,7 @@ use App\Entity\Apprenant;
 use App\Entity\Cohorte;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,8 +21,8 @@ class ApprenantType extends AbstractType
             ->add('email')
             ->add('description')
             ->add('dateNaiss')
-            ->add('photo')
-            ->add('cv')
+            ->add('photo', FileType::class)
+            ->add('cv', FileType::class)
             ->add('cohorte', EntityType::class, [
                 'class' => Cohorte::class,
                 'choice_label'=>'promotion'

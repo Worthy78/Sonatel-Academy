@@ -10,6 +10,8 @@ parameters:
     upload_equipe: '%kernel.project_dir%/public/uploads/equipe'
     upload_partenaire: '%kernel.project_dir%/public/uploads/partenaire'
     upload_blog: '%kernel.project_dir%/public/uploads/blog'
+    upload_apprenant: '%kernel.project_dir%/public/uploads/apprenant'
+    upload_apprenant_cv: '%kernel.project_dir%/public/uploads/apprenant/cv'
 
 services:
     # default configuration for services in *this* file

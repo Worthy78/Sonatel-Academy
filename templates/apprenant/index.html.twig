@@ -76,17 +76,17 @@
                 <div class="col-lg-4 col-md-6 marginTop-30">
                     <article class="card">
                         <div class="card-img">
-                                <a href="{{ path('apprenant_show', {'id': apprenant.id}) }}">
-                                <img class="rounded w-100" src="/front/assets/img/blog/standard/1.jpg" alt="">
+                                <a href="{{ path('apprenant_show_front', {'id': apprenant.id}) }}">
+                                <img class="rounded w-100" src="/uploads/apprenant/{{ apprenant.photo }}" alt="">
                             </a>
                         </div>
                         <div class="card-body px-0">
-                            <a class="text-primary" href="{{ path('apprenant_show', {'id': apprenant.id}) }}">{{ apprenant.fili�ere.libelle }}</a>
-                            <a href="{{ path('apprenant_show', {'id': apprenant.id}) }}" class="h4 my-2">
+                            <a class="text-primary" href="{{ path('apprenant_show_front', {'id': apprenant.id}) }}">{{ apprenant.fili�ere.libelle }}</a>
+                            <a href="{{ path('apprenant_show_front', {'id': apprenant.id}) }}" class="h4 my-2">
                                 {{ apprenant.prenom }} {{ apprenant.nom }}
                             </a>
                             <p>
-                                28 Mar, 2018 - by <a class="text-primary" href="{{ path('apprenant_show', {'id': apprenant.id}) }}">Alex</a>
+                                <b>Promotion</b>: <a class="text-primary" href="{{ path('apprenant_show_front', {'id': apprenant.id}) }}">{{ apprenant.cohorte.promotion }}</a>
                             </p>
                         </div>
                     </article>

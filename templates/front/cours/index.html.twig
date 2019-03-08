@@ -14,7 +14,7 @@
         Tous les cours
       </h2>
       <p class="lead">
-        <span class="text-primary">6,178</span> cours
+        <span class="text-primary">{{ cours|length }}</span> cours
       </p>
      </div>
       <form class="col-lg-5 my-2 ml-auto">
@@ -31,139 +31,203 @@
    </div>
   </div>
 </div>
+    </section>
+
+  <section class="pt-5 paddingBottom-100 bg-light-v2">
+    {% if cours %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div id="accordion">
+
+            <div class="card card-body accordion-item marginTop-30">
+              <a href="shop.html#acc1" class="accordion__title h6 mb-0" data-toggle="collapse" aria-expanded="true">
+                Filtré par catégorie
+                <span class="accordion__icon float-right small mx-2 mt-1">
+            <i class="ti-angle-down"></i>
+            <i class="ti-angle-up"></i>
+          </span>
+              </a>
+              <div id="acc1" class="collapse show" data-parent="#accordion">
+                <div class="mt-4">
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">All Categories</span>
+                    </label>
+                  </p>
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">Programming</span>
+                    </label>
+                  </p>
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">English</span>
+                    </label>
+                  </p>
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">Novel</span>
+                    </label>
+                  </p>
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">Others</span>
+                    </label>
+                  </p>
+
+                </div>
+              </div>
+            </div> <!-- END accordion-item-->
+
+            <div class="card card-body accordion-item marginTop-30">
+              <a href="shop.html#acc2" class="accordion__title h6 mb-0 collapsed" data-toggle="collapse" aria-expanded="true">
+                Filter by Author
+                <span class="accordion__icon float-right small mx-2 mt-1">
+            <i class="ti-angle-down"></i>
+            <i class="ti-angle-up"></i>
+          </span>
+              </a>
+              <div id="acc2" class="collapse" data-parent="#accordion">
+                <div class="mt-4">
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">All Authors</span>
+                    </label>
+                  </p>
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">Michael John</span>
+                    </label>
+                  </p>
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">Thomas Rang</span>
+                    </label>
+                  </p>
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">Gigy Sayfan</span>
+                    </label>
+                  </p>
+                  <p class="mb-2">
+                    <label class="ec-checkbox">
+                      <input type="checkbox" name="checkbox">
+                      <span class="ec-checkbox__control"></span>
+                      <span class="ec-checkbox__lebel">Daniel Brain</span>
+                    </label>
+                  </p>
+
+                </div>
+              </div>
+            </div> <!-- END accordion-item-->
 
 
-<section class="py-3 position-relative shadow-v1">
-  <div class="container">
-    <form class="row">
-      <div class="col-md-6 my-2">
-        <ul class="list-inline">
-          <li class="list-inline-item my-2">
-            <select class="form-control">
-              <option selected="">Selectionner une catégorie</option>
-              <option>UI/UX design</option>
-              <option>Web app</option>
-              <option>React</option>
-              <option>Game development</option>
-            </select>
-          </li>
-          <li class="list-inline-item my-2">
-            <select class="form-control">
-              <option selected="">Filter</option>
-              <option>Best selling</option>
-              <option>Newest</option>
-              <option>Top rated</option>
-              <option>Low price</option>
-              <option>High price</option>
-            </select>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-6 my-2 text-md-right">
-       <div class="d-inline-flex justify-md-content-end">
-        <select class="form-control my-2">
-          <option selected="" default="">items per page</option>
-          <option>8</option>
-          <option>12</option>
-          <option>16</option>
-          <option>20</option>
-          <option>24</option>
-        </select> 
-        <div class="d-flex rounded border ml-3 px-2 my-2">
-          <a href="page-sp-all-courcess.html" class="active btn px-1"><ti class="ti-layout-grid2"></ti></a>
-          <a href="page-sp-all-courcess-list.html" class="btn px-1"><ti class="ti-view-list"></ti></a>
-        </div>
-       </div>
-      </div>
-    </form> <!-- END row-->
-  </div> <!-- END container-->
-</section>
+            <div class="card card-body accordion-item marginTop-30">
+              <a href="shop.html#acc3" class="accordion__title h6 mb-0 collapsed" data-toggle="collapse" aria-expanded="true">
+                Filter by Price
+                <span class="accordion__icon float-right small mx-2 mt-1">
+            <i class="ti-angle-down"></i>
+            <i class="ti-angle-up"></i>
+          </span>
+              </a>
+              <div id="acc3" class="collapse" data-parent="#accordion">
+                <div class="marginTop-80">
+                  <div id="rangeSlide1" class="ec-range-slider"></div>
+                  <div class="d-flex align-items-center mt-4">
+                    <input type="text" class="form-control px-2" id="noUiSliders_1_input">
+                    <span class="mx-2">-</span>
+                    <input type="text" class="form-control px-2" id="noUiSliders_1_1_input">
+                  </div>
+                </div>
+              </div>
+            </div> <!-- END accordion-item-->
 
+          </div> <!-- END accordion-->
 
-<section class="padding-y-60 bg-light-v2">
-  <div class="container">
-    <div class="row">
-      {% for cour in cours %}
-      <div class="col-lg-4 col-md-6 marginTop-30">
-        <div href="page-course-details.html" class="card height-100p text-gray shadow-v1">
-          <img class="card-img-top" src="/front/assets/img/360x220/1.jpg" alt="">
-          <div class="card-body">
-            {% if cour.typecour.libelle == 'Cours' %}
-              <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13" style="margin-top: -13px;">
-             {{ cour.typecour.libelle }}
-           </span>
-            {% elseif cour.typecour.libelle == 'Tuto' %}
-              <span class="badge position-absolute top-0 bg-danger text-white" data-offset-top="-13" style="margin-top: -13px;">
-             {{ cour.typecour.libelle }}
-           </span>
-            {% endif %}
-            <a href="{{ path('cours_show', {'id': cour.id}) }}" class="h5">
-              {{ cour.libelle }}
-            </a>
-            <p class="my-3">
-              <i class="ti-user mr-2"></i>
-              {{ cour.module.libelle }}
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <span class="text-dark">5</span>
-              <span>(4578)</span>
-            </p>
-          </div>
-          <div class="card-footer media align-items-center justify-content-between">
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1">
-                <i class="ti-headphone small mr-2"></i>
-                46 lectures
-              </li>
-              <li class="mb-1">
-                <i class="ti-time small mr-2"></i>
-                27.5 hours
-              </li>
-            </ul>
-            <h4 class="h5 text-right">
-              <span class="text-primary">$180</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      <div class="col-12 marginTop-70">
-        <ul class="pagination pagination-primary justify-content-center">
-          <li class="page-item mx-1">
-            <a class="page-link iconbox iconbox-sm rounded-0" href="page-sp-all-courcess.html#">
-              <i class="ti-angle-left small"></i>
-            </a>
-          </li>
-          <li class="page-item mx-1">
-            <a class="page-link iconbox iconbox-sm rounded-0" href="page-sp-all-courcess.html#">1</a>
-          </li>
-          <li class="page-item active disabled mx-1">
-            <a class="page-link iconbox iconbox-sm rounded-0" href="page-sp-all-courcess.html#">2</a>
-          </li>
-          <li class="page-item mx-1">
-            <a class="page-link iconbox iconbox-sm rounded-0" href="page-sp-all-courcess.html#">3</a>
-          </li>
-          <li class="page-item disabled mx-1">
-            <a class="page-link iconbox iconbox-sm rounded-0" href="page-sp-all-courcess.html#">
-              <i class="ti-more-alt"></i>
-            </a>
-          </li>
-          <li class="page-item mx-1">
-            <a class="page-link iconbox iconbox-sm rounded-0" href="page-sp-all-courcess.html#">16</a>
-          </li>
-          <li class="page-item mx-1">
-            <a class="page-link iconbox iconbox-sm rounded-0" href="page-sp-all-courcess.html#">
-              <i class="ti-angle-right small"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div> <!-- END row-->
-  </div> <!-- END container-->
-</section>
+        </div> <!-- END col-md-3 -->
+
+        <div class="col-md-9">
+          <div class="row">
+            {% for cour in cours %}
+            <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+              <div class="card text-center height-100p shadow-v1">
+                  {% if cour.typecour.libelle == 'Cours' %}
+                  <span class="badge badge-pill badge-primary position-absolute top-20 left-10">{{ cour.typecour.libelle }}</span>
+                {% elseif cour.typecour.libelle == 'Tuto' %}
+                    <span class="badge badge-pill badge-danger position-absolute top-20 left-10">{{ cour.typecour.libelle }}</span>
+                  {% endif %}
+                  <div class="card-header">
+                  <img class="w-100 height-10vh" src="/uploads/cours/{{ cour.photo }}" alt="">
+                </div>
+                <div class="card-body px-3 py-0">
+                  <a href="{{ path('cours_show', {'id': cour.id}) }}" class="h6">{{ cour.libelle }}
+                  </a>
+                  <p class="text-gray">
+                      <b>Par</b>: {{ cour.auteur }}
+                  </p>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="mb-0 font-weight-semiBold">
+                      <span class="text-primary">{{ cour.module.libelle }}</span>
+                      <span class="text-gray"><s></s></span>
+                    </p>
+                    <ul class="list-unstyled ec-review-rating font-size-12">
+                      <li class="active"><i class="fas fa-star"></i></li>
+                      <li class="active"><i class="fas fa-star"></i></li>
+                      <li class="active"><i class="fas fa-star"></i></li>
+                      <li class="active"><i class="fas fa-star"></i></li>
+                      <li class="active"><i class="fas fa-star"></i></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer border-top-0">
+                  <a href="{{ path('cours_show', {'id': cour.id}) }}" class="btn btn-outline-primary mx-1">Suivre</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <div class="col-12 marginTop-60">
+              <ul class="pagination pagination-primary align-items-center justify-content-between">
+                <li class="page-item mx-1">
+                  <a class="page-link btn btn-sm width-auto rounded-pill" href="shop.html#">
+                    <i class="ti-arrow-left small mr-2"></i>
+                    Previous
+                  </a>
+                </li>
+                <li class="page-item mx-1">Page 2 of 45</li>
+                <li class="page-item mx-1">
+                  <a class="page-link btn btn-sm rounded-pill" href="shop.html#">
+                    Next
+                    <i class="ti-arrow-right small ml-2"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div> <!-- END row-->
+        </div> <!-- END col-md-9-->
+      </div> <!-- END row-->
+    </div> <!-- END container-->
+      {% else %}
+      <h1>Les cours ne sont pas disponible pour moment.....</h1>
+    {% endif %}
+  </section>
 {% endblock %}
