@@ -68,7 +68,7 @@ class ApprenantController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="apprenant_show_front", methods={"GET"})
+     * @Route("/{id}/veup", name="apprenant_show_front", methods={"GET"})
      */
     public function showFront(Apprenant $apprenant): Response
     {
