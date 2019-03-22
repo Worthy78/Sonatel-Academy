@@ -5,7 +5,7 @@
      <div class="container">
        <div class="row">
          <div class="col-12 text-center text-white marginBottom-80">
-           <h1 class="display-md-2 font-weight-bold">Sonatel 
+           <h1 class="display-md-2 font-weight-bold">Sonatel
            <span class="text-primary">
              <span data-typed-text="School, College, University, E-learning">Academy</span><span></span>
            </span>
@@ -14,7 +14,7 @@
              Educati is an elegant, modern and fully customizable school, online School, College, University, Online University and E-Learning Multi-Purpose education HTML template
            </p>
          </div>
-         
+
          <div class="col-lg-3 col-md-6 mt-4">
            <div class="border border-white-0_5 p-4 text-center text-white rounded">
              <h2 class="display-4 font-weight-bold">8+</h2>
@@ -23,7 +23,7 @@
              </p>
            </div>
          </div>
-         
+
          <div class="col-lg-3 col-md-6 mt-4">
            <div class="border border-white-0_5 p-4 text-center text-white rounded">
              <h2 class="display-4 font-weight-bold">50+</h2>
@@ -32,7 +32,7 @@
              </p>
            </div>
          </div>
-         
+
          <div class="col-lg-3 col-md-6 mt-4">
            <div class="border border-white-0_5 p-4 text-center text-white rounded">
              <h2 class="display-4 font-weight-bold">200+</h2>
@@ -41,7 +41,7 @@
              </p>
            </div>
          </div>
-         
+
          <div class="col-lg-3 col-md-6 mt-4">
            <div class="border border-white-0_5 p-4 text-center text-white rounded">
              <h2 class="display-4 font-weight-bold">96+</h2>
@@ -50,10 +50,11 @@
              </p>
            </div>
          </div>
-         
+
        </div> <!-- END row-->
      </div> <!-- END container-->
    <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;"><div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url(&quot;file:///var/www/project/Sonatel%20Academy/educati/assets/img/1920x800/4.jpg&quot;); position: fixed; top: 0px; left: 0px; width: 1351px; height: 1007px; overflow: hidden; pointer-events: none; margin-top: -318px; transform: translate3d(0px, 106px, 0px);"></div></div></section>
+
   {% if events %}
 <section class="padding-y-100" data-primary-overlay="7" style="background:url(/front/assets/img/1920/962.jpg) no-repeat">
   <div class="container">
@@ -152,65 +153,86 @@
       </div> <!-- END row-->
     </div> <!-- END container-->
   </section>
-  <section class="padding-y-150">
-    <div class="container">
-      <div class="row align-items-center height-100p py-4">
+  <section class="padding-y-30" style="background:url(/front/assets/img/college/2.jpg) no-repeat">
+    <div class="container col-12 row">
+      <div class="row align-items-center height-150p py-4 col-8">
+        <div class="col-8 align-items-center text-center card p-4 col clockinner1 clockinner margin-y-20" style="margin-left:18%">
+        <h1><b>Inscription pour la Cohorte #3 dans!!</b></h1>
+        </div>
         <div class="col-lg-10 mx-auto">
-          <div class="card-deck text-center" data-countdown="2019/09/09">
-            <div class="card p-4">
-              <h2 class="countdown-days display-4">00</h2>
-              <span>Days</span>
+          <div class="card-deck text-center" data-countdown="2019/09/09" id="clockdiv">
+            <div class="card p-4 col clockinner1 clockinner">
+              <h2 class="countdown-days display-4 days">00</h2>
+              <span>Jours</span>
             </div>
-            <div class="card p-4">
-              <h2 class="countdown-hours display-4">00</h2>
-              <span>Hours</span>
+            <div class="card p-4 col clockinner1 clockinner">
+              <h2 class="countdown-hours display-4 hours">00</h2>
+              <span>Heures</span>
             </div>
-            <div class="card p-4">
-              <h2 class="countdown-minutes display-4">00</h2>
+            <div class="card p-4 col clockinner1 clockinner">
+              <h2 class="countdown-minutes display-4 minutes">00</h2>
               <span>Minutes</span>
             </div>
-            <div class="card p-4">
-              <h2 class="countdown-seconds display-4">00</h2>
-              <span>Seconds</span>
+            <div class="card p-4 col clockinner1 clockinner">
+              <h2 class="countdown-seconds display-4 seconds">00</h2>
+              <span class="display-7">Seconds</span>
             </div>
           </div>
         </div>
       </div>
+      <div class="row col-4 text-center padding-y-30">
+      <div class="row mt-5 card p-4">
+             <div class="col-md-12">
+               <h4 class="mb-5">
+                  Restez informé de la nouvel rentrée.
+               </h4>
+               <form action="{{ path('abonne_newlester_new') }}" method="post">
+               <div class="input-group input-group--focus mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded-0 bg-white ti-email"></span>
+                </div>
+                <input type="text" class="form-control rounded-0" placeholder="apprenant@sonatelacademy.sn" name="email">
+              </div>
+              <button class="btn btn-success active mr-2 mb-3" type="submit">S'inscrire</button>
+              </form>
+             </div>
+            </div>
+        </div>
 
     </div>
   </section>
 <section class="padding-y-100 bg-cover" data-dark-overlay="6" style="background:url(/front/assets/img/college/2.jpg) no-repeat">
   <div class="container">
     <div class="row text-center text-white">
-     
+
       <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;">
         <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="520" data-speed="3000">520</p>
         <p class="lead">
           Online Courses
         </p>
       </div>
-     
+
       <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">
         <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="690" data-speed="3000">690</p>
         <p class="lead">
           Trusted Tutors
         </p>
       </div>
-     
+
       <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
         <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="485645" data-speed="3000">485645</p>
         <p class="lead">
           Online Students
         </p>
       </div>
-     
+
       <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
         <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="5409" data-speed="3000">5409</p>
         <p class="lead">
           Success Stories
         </p>
       </div>
-      
+
     </div> <!-- END row-->
 
   </div> <!-- END container-->
@@ -328,7 +350,7 @@
       </div>
    {% endfor %}
     </div> <!-- END row-->
-  </div> <!-- END container--> 
+  </div> <!-- END container-->
 </section>
   {% else %}
   {% endif %}
@@ -366,4 +388,3 @@
     </div>
   </section>
 {% endblock %}
-

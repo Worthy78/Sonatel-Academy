@@ -1,8 +1,8 @@
 (function($){
   'use strict';
-  
-  
-  
+
+
+
 //////////////////////////////////////////////////
 ///////////////// Helper variables
 // ///////////////////////////////////////////////
@@ -11,21 +11,21 @@ var $assetsPath ='assets/vendor',
      $windowHeight = $(window).height(),
      $windowWidth = $(window).width(),
      $document = $(document);
-  
-  
-  
-  
+
+
+
+
 //////////////////////////////////////////////////
-/////////////////  Helper function 
-// ///////////////////////////////////////////////  
-  
+/////////////////  Helper function
+// ///////////////////////////////////////////////
+
 // ////////////////////////////////////////////////
-// Dynamic Script Loading  
-// /////////////////////////////////////////////// 
+// Dynamic Script Loading
+// ///////////////////////////////////////////////
   function loadScript(url, callback){
     var script = document.createElement("script");
     script.type = "text/javascript";
-    if (script.readyState){  
+    if (script.readyState){
         script.onreadystatechange = function(){
             if (script.readyState == "loaded" ||
                     script.readyState == "complete"){
@@ -41,42 +41,42 @@ var $assetsPath ='assets/vendor',
     script.src = url;
     document.getElementsByTagName("body")[0].appendChild(script);
 }
-  
-  
+
+
 // ////////////////////////////////////////////////
 // Check if something really exits
-// /////////////////////////////////////////////// 
+// ///////////////////////////////////////////////
   $.fn.exists = function () {
     return this.length > 0;
   };
 
-  
-  
-  
+
+
+
 // ////////////////////////////////////////////////
-//////// theme helper functions master object 
-// ///////////////////////////////////////////////   
+//////// theme helper functions master object
+// ///////////////////////////////////////////////
 var ECHOHelper = {
-  
+
     // nav on scroll apperaance
-  
+
     navOnScrollApperaance:function(){
       var $nav = $('.ec-nav');
       // add shadow when nav sticky top
       if($nav.length){
-        $(window).scroll(function() {  
+        $(window).scroll(function() {
             if ($(window).scrollTop() >= 100) {
                 $('.ec-nav.sticky-top').addClass('shadow-v1');
             }
             else {
                 $('.ec-nav.sticky-top').removeClass('shadow-v1');
-            }  
-        });        
+            }
+        });
       }
 
     },
-  
-  		
+
+
     // Smooth scroll to target element
 
     scrollTo: function(){
@@ -93,7 +93,7 @@ var ECHOHelper = {
         });
     },
 
-    // Show mobile dropdown menu when click 
+    // Show mobile dropdown menu when click
     mobileNavShow: function(){
         $( '.dropdown-menu a.dropdown-toggle' ).on( 'click', function ( e ) {
             var $el = $( this );
@@ -112,11 +112,11 @@ var ECHOHelper = {
             return false;
         } );
     },
-  
-  
+
+
     // Search form toggler
     searchFormToggle: function(){
-      
+
       $('.site-search-toggler').on('click', function(e){
         e.preventDefault();
         $('.site-search').addClass('open');
@@ -124,19 +124,19 @@ var ECHOHelper = {
       $('.site-search__close').on('click', function(){
         $('.site-search').removeClass('open');
       });
-      
+
     },
-  
-  
+
+
     // Search form toggler
     hamburger: function(){
-      
+
       $('.hamburger').on('click', function(e){
         $(this).toggleClass('is-active');
       });
     },
 
-  
+
    //input focus shadow
     inputGroupFocus:function(){
       $('.input-group--focus .form-control').on('focus', function(){
@@ -147,17 +147,17 @@ var ECHOHelper = {
     },
 
 
-  
+
    //input focus shadow
     animatedShare:function(){
-      
+
       $('.animated-share__trigger').on('click', function(e){
         e.preventDefault();
         $(this).parent('.animated-share').toggleClass('active');
       });
     },
 
-  
+
    //touchSpin
     touchSpin:function(){
           $('.ec-touchspin').each(function(){
@@ -166,11 +166,11 @@ var ECHOHelper = {
             var $minus = $this.find('.ec-touchspin__minus');
             var $input = $this.find('.ec-touchspin__result');
             var $inputVal = parseInt($input.val());
-            
+
               $input.on('change', function(){
                 $inputVal = parseInt($(this).val());
               });
-            
+
               $plus.on('click', function(){
                 $inputVal += 1;
                 $input.val($inputVal);
@@ -179,22 +179,22 @@ var ECHOHelper = {
               $minus.on('click', function(){
                 if($inputVal > 0){
                    $inputVal -= 1;
-                  $input.val($inputVal); 
+                  $input.val($inputVal);
                 }
                 return;
-              });    
-            
-            
+              });
+
+
           });
-    
-      
+
+
     }, // End touchSpin
 
-  
+
    //ecRating
     ecRating:function(){
       if($('.ec-rating').exists()){
-        
+
           $('.ec-rating').each(function(){
                 var $this = $(this),
                 $target = $this.find('> *'),
@@ -216,19 +216,19 @@ var ECHOHelper = {
                 $(this).nextAll().removeClass('active ' + stateClass);
               });
           });
-        
-        
+
+
       }else{
         return;
       } // End if
-      
+
     }, // End ecRating
 
-  
+
   /// Scroll to top
   scrollTop: function(){
       var documentOffsetHeight = document.body.offsetHeight;
-    
+
       $(window).on('scroll', function() {
           if ($(this).scrollTop() > 600 ){
               $('.scroll-top').addClass('active');
@@ -236,7 +236,7 @@ var ECHOHelper = {
               $('.scroll-top').removeClass('active');
           }
       });
-    
+
       $('.scroll-top').on('click', function() {
           $("html, body").animate({
                   scrollTop: 0
@@ -244,20 +244,20 @@ var ECHOHelper = {
           return false;
       });
   },
-		
-  
+
+
   offsetTop: function(){
-    
+
     if($('[data-offset-top], [data-offset-top-md], [data-offset-top-lg], [data-offset-top-xl]').exists()){
-      // For all device 
+      // For all device
         $('[data-offset-top]').each(function(){
           var $this = $(this);
           var offsetVal = $this.data('offset-top');
           $this.css({
             marginTop:offsetVal
           });
-        });        
-      
+        });
+
       // For md
       if($(window).width() > 768){
         $('[data-offset-top-md]').each(function(){
@@ -266,9 +266,9 @@ var ECHOHelper = {
           $this.css({
             marginTop:offsetVal
           });
-        });    
+        });
       }
-      
+
       // For lg
       if($(window).width() > 992){
         $('[data-offset-top-lg]').each(function(){
@@ -277,9 +277,9 @@ var ECHOHelper = {
           $this.css({
             marginTop:offsetVal
           });
-        });  
+        });
        }
-      
+
      // For xl
       if($(window).width() > 1200){
         $('[data-offset-top-xl]').each(function(){
@@ -288,15 +288,15 @@ var ECHOHelper = {
           $this.css({
             marginTop:offsetVal
           });
-        });    
-      } 
-      
+        });
+      }
+
   } // END if
-    
+
   } // END offsetTop
-  
-  
-  
+
+
+
 }; // END ECHOHelper
 // ////////////////////////////////////////////////
 // init all ECHOHelper
@@ -314,27 +314,27 @@ var ECHOHelper = {
     ECHOHelper.offsetTop();
     ECHOHelper.scrollTop();
   });
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
 // ////////////////////////////////////////////////
-//////// Components/ECHOCOMPONENTS master object 
-// ///////////////////////////////////////////////  
+//////// Components/ECHOCOMPONENTS master object
+// ///////////////////////////////////////////////
   var ECHOCOMPONENTS = {
-    
-    
+
+
 // ////////////////////////////////////////////////
 // typed js
 // ///////////////////////////////////////////////
     typedText:function(){
       if($('[data-typed-text]').exists()){
         loadScript($assetsPath + '/typed.js/typed.min.js', function(){
-          
+
             var typedTxt = $('[data-typed-text]').data('typed-text').split(',');
             var typed = new Typed('[data-typed-text]', {
                 strings: typedTxt,
@@ -343,13 +343,13 @@ var ECHOHelper = {
                 backSpeed: 80,
                 showCursor:false
             });
-          
+
         });
       }
       return;
     },
-    
-    
+
+
 // ////////////////////////////////////////////////
 // Isotop
 // ///////////////////////////////////////////////
@@ -362,8 +362,8 @@ var ECHOHelper = {
            isotopEl.isotope({
               percentPosition: true
            });
-         }); 
-          
+         });
+
         // Filter isotop
           var filterNav = $('.nav-isotop-filter');
           filterNav.on('click', 'a.nav-link', function(e){
@@ -375,39 +375,39 @@ var ECHOHelper = {
             filterNav.find('.active').removeClass('active');
             $(this).addClass('active');
           });
-          
+
         });
       }
       return;
     },
-    
-    
-    
+
+
+
 // ////////////////////////////////////////////////
 // masonry
 // ///////////////////////////////////////////////
     masonry:function(){
       if($('.js-masonry').exists()){
         loadScript($assetsPath + '/isotope-layout/dist/isotope.pkgd.min.js', function(){
-          
+
         var isotopEl = $('.js-masonry');
          isotopEl.imagesLoaded(function(){
            isotopEl.masonry({
               // options
               itemSelector: '.masonry-item'
             });
-         }); 
-          
+         });
+
         });
       }
       return;
     },
-    
-   
-    
-    
+
+
+
+
 // ////////////////////////////////////////////////
-// Fancybox 
+// Fancybox
 // ///////////////////////////////////////////////
     fancyBox:function(){
       if($('[data-fancybox]').exists()){
@@ -419,11 +419,11 @@ var ECHOHelper = {
       }
       return;
     },
-    
-    
-    
+
+
+
 // ////////////////////////////////////////////////
-// owl carousel 
+// owl carousel
 // ///////////////////////////////////////////////
     owlCarousel:function(){
         if($('.owl-carousel').exists()){
@@ -453,8 +453,8 @@ var ECHOHelper = {
                   margin:$space,
                   dots: $dots,
                   nav: $arrow,
-                  dotsClass:'owl-dots'+ ' '+$dotsclass, 
-                  stageOuterClass: 'owl-stage-outer'+ ' '+$stageOuterClass, 
+                  dotsClass:'owl-dots'+ ' '+$dotsclass,
+                  stageOuterClass: 'owl-stage-outer'+ ' '+$stageOuterClass,
                   navText:["<i class='ti-angle-left'></i>","<i class='ti-angle-right'></i>"],
                   autoHeight:$autohgt,
                   responsive:{
@@ -472,23 +472,23 @@ var ECHOHelper = {
                         }
                     }
 
-              }); 
-         }); 
+              });
+         });
        }
-      );}  
+      );}
 
       return;
     },
-    
-    
-    
+
+
+
 // ////////////////////////////////////////////////
 // Parallax
 // ///////////////////////////////////////////////
   parallax:function(){
-    
+
     if($('.jarallax').exists()){
-      
+
       loadScript($assetsPath+'/jarallax/dist/jarallax.min.js', function(){
 
            $('.jarallax').jarallax();
@@ -497,11 +497,11 @@ var ECHOHelper = {
     } // End if
     return;
   },
-        
-    
-    
+
+
+
 // ////////////////////////////////////////////////
-// wow js animation 
+// wow js animation
 // ///////////////////////////////////////////////
   wow:function(){
     var wowInit = new WOW(
@@ -515,9 +515,9 @@ var ECHOHelper = {
     );
     wowInit.init();
   },
-    
-        
-    
+
+
+
 // ////////////////////////////////////////////////
 // Circles js
 // ///////////////////////////////////////////////
@@ -546,26 +546,26 @@ var ECHOHelper = {
               text:                function(value){return value + (($textSuffix) ? $textSuffix : null);},
               colors:              [$this.data('border-color') || '#eee', $this.data('border-fg-color') || '#000']
             });
-          
-          // set font size 
+
+          // set font size
           $this.find('.circles-text').css({
             fontSize: $this.data('text-size'),
             color: $this.data('text-color')
           });
 
-          
-          
+
+
         });
-        
+
     }); // END loadScript
     } // End if
     return;
   },
-    
-        
-  
+
+
+
 // ////////////////////////////////////////////////
-// Chosen js/ select 
+// Chosen js/ select
 // ///////////////////////////////////////////////
   chosenSelect:function(){
     if($('.ec-select').exists()){
@@ -583,11 +583,11 @@ var ECHOHelper = {
               $select_btn_class = ($this.data('btn-classes')) ? $this.data('btn-classes') : null,
               $select_placeholder = ($this.data('placeholder-text')) ? $this.data('placeholder-text') : 'Select an Option',
               $select_rtl = ($this.data('rtl')) ? $this.data('rtl') : false;
-          
+
               $this.on('chosen:ready', function(){
                 $this.siblings('.chosen-container').find('.chosen-single').addClass($select_btn_class);
               });
-          
+
              $this.chosen({
                 disable_search:$disable_search,
                 disable_search_threshold:$disable_search_threshold,
@@ -604,32 +604,32 @@ var ECHOHelper = {
     return;
   },
 
-    
-    
+
+
 // ////////////////////////////////////////////////
-// Google map 
+// Google map
 // ///////////////////////////////////////////////
   googleMap:function(){
-    
-    //Check if map DOM element exit 
+
+    //Check if map DOM element exit
     if($('.google-map').exists()){
-      
+
       // Fatch HTML DOM element
       var elm = $('.google-map');
-      
-      // Fatch Map key 
-      var mapKey = elm.data('key');  
-      
-      // check if the map has a valid key 
+
+      // Fatch Map key
+      var mapKey = elm.data('key');
+
+      // check if the map has a valid key
       if(mapKey){
-        
+
         // if has valid key load google api
         loadScript('https://maps.googleapis.com/maps/api/js?key='+mapKey, function(){
-          
+
             elm.each(function(index, DOMelm){
             var $this = $(this);
 
-              // fatch map options               
+              // fatch map options
             var address = $this.data('address'),
                 zoom = ($this.data('zoom')) ? $this.data('zoom') : 8,
                 mapTypeId = ($this.data('map-type')) ? $this.data('map-type') : "roadmap",
@@ -649,7 +649,7 @@ var ECHOHelper = {
                     mapOptions.center = results[0].geometry.location;
                     var map = new google.maps.Map(DOMelm, mapOptions);
 
-                  // styling the map 
+                  // styling the map
                     $.getJSON( styleJSON, function( data ) {
                       map.setOptions({
                           styles: data
@@ -663,7 +663,7 @@ var ECHOHelper = {
                         icon:iconPath
                     });
 
-                  // info window 
+                  // info window
                     var infowindow = new google.maps.InfoWindow({'content': address});
                   // Show info window by default
                     /*google.maps.event.addListener(map, 'tilesloaded', function(event) {
@@ -672,7 +672,7 @@ var ECHOHelper = {
 
                     google.maps.event.addListener(marker, 'click', function() {
                         infowindow.open(map, marker);
-                    });              
+                    });
                 } else {
                     alert('The address could not be found for the following reason: ' + status);
                 }
@@ -680,27 +680,27 @@ var ECHOHelper = {
 
             }); // End each
 
-        }); // END loadScript  
+        }); // END loadScript
       }else {
         $(elm).text('Please provide a valid key');
-      } // END if key check 
-    
+      } // END if key check
+
 
     }else{
       return;
-    } // END Check is map element exit 
+    } // END Check is map element exit
   },
 
 
-    
+
 // ////////////////////////////////////////////////
-// dateTimePicker 
+// dateTimePicker
 // ///////////////////////////////////////////////
   dateTimePicker:function(){
     if($('[data-toggle="datetimepicker"]').exists()){
-      loadScript($assetsPath+'/moment/moment.min.js', function(){        
+      loadScript($assetsPath+'/moment/moment.min.js', function(){
         loadScript($assetsPath+'/tempus-dominus-datetimepicker/js/tempusdominus-bootstrap-4.min.js', function(){
-          // Date time both 
+          // Date time both
             $('#ec-datetimepicker').datetimepicker({
               icons: {
                   time: 'far fa-clock',
@@ -713,7 +713,7 @@ var ECHOHelper = {
                   clear: 'far fa-trash',
                   close: 'ti-home'
                 }
-            });              
+            });
           // Only date
             $('#ec-datepicker').datetimepicker({
               format: 'L',
@@ -729,7 +729,7 @@ var ECHOHelper = {
                   close: 'ti-close'
                 }
             });
-          
+
           // Only time
             $('#ec-timepicker').datetimepicker({
               format: 'LT',
@@ -745,8 +745,8 @@ var ECHOHelper = {
                   close: 'ti-close'
                 }
             });
-          
-          // Date time side by side 
+
+          // Date time side by side
             $('#ec-datetimepicker-sbs').datetimepicker({
                sideBySide: true,
               icons: {
@@ -761,10 +761,10 @@ var ECHOHelper = {
                   close: 'ti-close'
                 }
             });
-          
+
       }); // END loadScript
-      
-        
+
+
       });
     }else {
       return;
@@ -772,14 +772,14 @@ var ECHOHelper = {
 
   },
 
-    
-    
+
+
 // ////////////////////////////////////////////////
 // noUiSlider slider
 // ///////////////////////////////////////////////
   noUiSliderInit:function(){
 
-    
+
     if($('.ec-range-slider').exists()){
 
       loadScript('assets/vendor/nouislider/distribute/nouislider.min.js', function(){
@@ -787,7 +787,7 @@ var ECHOHelper = {
 
             var noUiSliders = {
 
-              noUiSliders_1:function(){      
+              noUiSliders_1:function(){
               var rangeSlide1 = document.getElementById('rangeSlide1');
 
               noUiSlider.create(rangeSlide1, {
@@ -800,23 +800,23 @@ var ECHOHelper = {
                   }
               });
 
-          
-        // Update low and high value 
+
+        // Update low and high value
         var sliderInput0 = document.getElementById('noUiSliders_1_input');
         var sliderInput1 = document.getElementById('noUiSliders_1_1_input');
-        var sliderInputs = [sliderInput0, sliderInput1];        
+        var sliderInputs = [sliderInput0, sliderInput1];
 
         rangeSlide1.noUiSlider.on('update', function( values, handle ) {
             sliderInputs[handle].value = values[handle];
         });
-    
+
         }
       };
-        
-      
+
+
       noUiSliders.noUiSliders_1();
 
-      
+
         var rangeSlide2 = document.getElementById('rangeSlide2');
 
         noUiSlider.create(rangeSlide2, {
@@ -828,14 +828,14 @@ var ECHOHelper = {
                 'max': 500
             }
         });
-      
+
     }); // END loadScript
-      
+
     } // END if
   }, // END noUiSliderInit
 
-    
-    
+
+
 // ////////////////////////////////////////////////
 // countDown
 // ///////////////////////////////////////////////
@@ -845,16 +845,16 @@ countDown: function(){
             $('[data-countdown]').each(function() {
             var $this = $(this), finalDate = $(this).data('countdown');
             $this.countdown(finalDate, function(event) {
-                if($this.find('.countdown-days').length > 0){ 
+                if($this.find('.countdown-days').length > 0){
                     $this.find('.countdown-days').text(event.strftime('%D'));
                 }
-                if($this.find('.countdown-hours').length > 0){ 
+                if($this.find('.countdown-hours').length > 0){
                     $this.find('.countdown-hours').text(event.strftime('%H'));
                 }
-                if($this.find('.countdown-minutes').length > 0){ 
+                if($this.find('.countdown-minutes').length > 0){
                     $this.find('.countdown-minutes').text(event.strftime('%M'));
                 }
-                if($this.find('.countdown-seconds').length > 0){ 
+                if($this.find('.countdown-seconds').length > 0){
                     $this.find('.countdown-seconds').text(event.strftime('%S'));
                 }
             });
@@ -880,24 +880,24 @@ countDown: function(){
           appear: function appear(el){
             $(el).countTo();
           },
-    
+
         });
-        
+
       }); // END loadScript
     }); // END loadScript
   } // End if
-    
-    
-    
+
+
+
   },
 
-    
-    
-  }; // END ECHOCOMPONENTS obj  
-  
-  
-  
-  
+
+
+  }; // END ECHOCOMPONENTS obj
+
+
+
+
 // ////////////////////////////////////////////////
 // init all ECHOCOMPONENTS
 // ///////////////////////////////////////////////
@@ -918,23 +918,23 @@ countDown: function(){
       ECHOCOMPONENTS.jsCircle();
   });
 
-  
 
 
-  
+
+
     $('[data-offset-top]').each(function(){
       var $this = $(this);
       var offsetVal = $this.data('offset-top');
       $this.css({
         marginTop:offsetVal
       });
-    });        
+    });
 
-  
-  
+
+
 // ////////////////////////////////////////////////
 // Init bootstrap tooltip and popover
-// ///////////////////////////////////////////////  
+// ///////////////////////////////////////////////
   $('[data-toggle="tooltip"]').each(function(){
     var $this = $(this);
       var skin_color = $this.data('skin');
@@ -942,11 +942,11 @@ countDown: function(){
         template:'<div class="tooltip'+" "+ ((skin_color)? 'tooltip-'+skin_color:" ") +'"' +' role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
       });
   });
-  
+
   $('[data-toggle="tooltip"]').on('click', function(){
     $('[data-toggle="tooltip"]').not(this).tooltip('hide');
   });
-  
+
   $('[data-toggle="popover"]').each(function(){
     var $this = $(this);
       var skin_color = $this.data('skin');
@@ -958,7 +958,46 @@ countDown: function(){
   $('[data-toggle="popover"]').on('click', function(){
     $('[data-toggle="popover"]').not(this).popover('hide');
   });
-  
 
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'total': t,
+      'days': days,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
+
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+
+  var deadline = new Date(Date.parse(new Date()) + 30 * 24 * 60 * 60 * 1000);
+  initializeClock('clockdiv', '2019/04/04');
 }(jQuery));
-
