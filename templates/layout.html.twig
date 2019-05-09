@@ -94,28 +94,24 @@
                     <li>
                         <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Équipe</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Professors" href="all-professors.html"><span class="mini-sub-pro">Profésseurs</span></a></li>
-                            <li><a title="Add Professor" href="add-professor.html"><span class="mini-sub-pro">Administrations</span></a></li>
+                            <li><a title="Liste Professeur" href="{{path("professeur_index")}}"><span class="mini-sub-pro">Profésseurs</span></a></li>
                         </ul>
                     </li>
                     <li>
                         <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Apprenants</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Students" href="{{ path('apprenant_new') }}"><span class="mini-sub-pro">Tous les apprenants</span></a></li>
-                            <li><a title="Add Students" href="add-student.html"><span class="mini-sub-pro">Add Student</span></a></li>
-                            <li><a title="Edit Students" href="edit-student.html"><span class="mini-sub-pro">Edit Student</span></a></li>
-                            <li><a title="Students Profile" href="student-profile.html"><span class="mini-sub-pro">Student Profile</span></a></li>
+                            <li><a title="All Students" href="{{ path('apprenant_index') }}"><span class="mini-sub-pro">Tous les apprenants</span></a></li>
+                            <li><a title="Add Students" href="{{ path('apprenant_new') }}"><span class="mini-sub-pro">Add Student</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class=" " href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Cours</span></a>
+                        <a class=" " href="{{path("index_admin")}}" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Cours</span></a>
                     </li>
                     <li>
                         <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Inscriptions</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Library" href="library-assets.html"><span class="mini-sub-pro">Library Assets</span></a></li>
-                            <li><a title="Add Library" href="add-library-assets.html"><span class="mini-sub-pro">Add Library Asset</span></a></li>
-                            <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
+                            <li><a title="All Library" href="#"><span class="mini-sub-pro">Formation en ligne</span></a></li>
+                            <li><a title="Add Library" href="#"><span class="mini-sub-pro">Cohorte 3</span></a></li>
                         </ul>
                     </li>
                     <li>
@@ -130,11 +126,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Blog</span></a>
-                        <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
-                            <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
-                        </ul>
+                        <a class="" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Blog</span></a>
                     </li>
                 </ul>
             </nav>
@@ -309,7 +301,7 @@
                                                     </li>
                                                     <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                                                     </li>
-                                                    <li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+                                                    <li><a href="{{path('security_logout')}}"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
                                                     </li>
                                                 </ul>
                                             </li>

@@ -1,345 +1,370 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<section class="padding-y-100 flex-center jarallax height-100vh" data-dark-overlay="5" style="background: none no-repeat;" data-jarallax-original-styles="background:url(/front/assets/img/img/4.jpg) no-repeat">
-     <div class="container">
-       <div class="row">
-         <div class="col-12 text-center text-white marginBottom-80">
-           <h1 class="display-md-2 font-weight-bold">Sonatel
-           <span class="text-primary">
-             <span data-typed-text="School, College, University, E-learning">Academy</span><span></span>
-           </span>
-           </h1>
-           <p class="font-size-22 my-4">
-             Educati is an elegant, modern and fully customizable school, online School, College, University, Online University and E-Learning Multi-Purpose education HTML template
-           </p>
-         </div>
-
-         <div class="col-lg-3 col-md-6 mt-4">
-           <div class="border border-white-0_5 p-4 text-center text-white rounded">
-             <h2 class="display-4 font-weight-bold">8+</h2>
-             <p>
-               Unique Homepage
-             </p>
-           </div>
-         </div>
-
-         <div class="col-lg-3 col-md-6 mt-4">
-           <div class="border border-white-0_5 p-4 text-center text-white rounded">
-             <h2 class="display-4 font-weight-bold">50+</h2>
-             <p>
-               Creative Inner Pages
-             </p>
-           </div>
-         </div>
-
-         <div class="col-lg-3 col-md-6 mt-4">
-           <div class="border border-white-0_5 p-4 text-center text-white rounded">
-             <h2 class="display-4 font-weight-bold">200+</h2>
-             <p>
-               Reusable Elements
-             </p>
-           </div>
-         </div>
-
-         <div class="col-lg-3 col-md-6 mt-4">
-           <div class="border border-white-0_5 p-4 text-center text-white rounded">
-             <h2 class="display-4 font-weight-bold">96+</h2>
-             <p>
-               HTML Pages
-             </p>
-           </div>
-         </div>
-
-       </div> <!-- END row-->
-     </div> <!-- END container-->
-   <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;"><div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url(&quot;file:///var/www/project/Sonatel%20Academy/educati/assets/img/1920x800/4.jpg&quot;); position: fixed; top: 0px; left: 0px; width: 1351px; height: 1007px; overflow: hidden; pointer-events: none; margin-top: -318px; transform: translate3d(0px, 106px, 0px);"></div></div></section>
-
-  {% if events %}
-<section class="padding-y-100" data-primary-overlay="7" style="background:url(/front/assets/img/1920/962.jpg) no-repeat">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-12 text-center text-white mb-md-4">
-        <h2 class="mb-4">
-          Événements à venir
-        </h2>
-        <div class="width-3rem height-4 rounded bg-white mx-auto"></div>
-      </div>
-      {% for event in events|slice(0, 3) %}
-      <div class="col-md-4 mt-4">
-        <div class="card">
-          <img class="card-img-top" src="/uploads/events/{{ event.photo }}" alt="">
-          <div class="card-body">
-            <h4 class="h5">
-              {{ event.libelle }}
-            </h4>
-            <ul class="list-unstyled my-4 line-height-xl">
-              <li>
-                 <i class="ti-time mr-2 text-primary"></i>
-                {{ event.date|date("m/d/Y")  }} à {{ event.date|date("H:m") }}
-              </li>
-              <li>
-                 <i class="ti-location-pin mr-2 text-primary"></i>
-                 {{ event.lieu }}
-              </li>
-            </ul>
-            <a href="index-university.html#" class="text-primary">
-              Voir details
-              <i class="ti-angle-double-right small"></i>
-            </a>
+  <section class="padding-y-100 flex-center jarallax height-100vh" data-dark-overlay="5" style="background: url({{asset('front/assets/img/img/ouzjean.jpg')}}) no-repeat;">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center text-white marginBottom-80">
+            <h1 class="display-md-2 font-weight-bold text-warning">
+            <span class="text-primary">
+              <span data-typed-text="Sonatel Academy, Première école de codage gratuite du Sénégal"></span>|<span></span>
+            </span>
+            </h1>
+            <p class="font-size-22 my-4"> #CodingForBetterLife </p>
           </div>
-        </div>
-      </div>{% endfor %} <!-- END col-md-4-->
-      <div class="col-12 mt-5 text-center">
-        <a href="index-university.html#" class="btn btn-outline-white-hover">Plus d'événements</a>
-      </div>
-    </div> <!-- END row-->
-  </div> <!-- END container-->
-</section>
-  {% else %}
-  {% endif %}
 
-  <section class="padding-y-100">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center mb-md-4">
-          <h2 class="mb-4">
-            Academy Life
-          </h2>
-          <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
-        </div>
-      </div> <!-- END row-->
-      <div class="row">
-        <div class="col-lg-6 marginTop-30">
-          <img class="w-100" src="/front/assets/img/555x490/1.jpg" alt="">
-        </div>
-        <div class="col-lg-6">
-          <div class="row">
-            <div class="col-md-6 marginTop-30">
-              <div class="position-relative">
-                <img class="w-100" src="/front/assets/img/262x230/1.jpg" alt="">
-                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
-                  <i class="ti-control-play text-primary"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 marginTop-30">
-              <div class="position-relative">
-                <img class="w-100" src="/front/assets/img/262x230/2.jpg" alt="">
-                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
-                  <i class="ti-control-play text-primary"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 marginTop-30">
-              <div class="position-relative">
-                <img class="w-100" src="/front/assets/img/262x230/3.jpg" alt="">
-                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
-                  <i class="ti-control-play text-primary"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 marginTop-30">
-              <div class="position-relative">
-                <img class="w-100" src="/front/assets/img/262x230/4.jpg" alt="">
-                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
-                  <i class="ti-control-play text-primary"></i>
-                </a>
-              </div>
+          <div class="col-lg-3 col-md-6 mt-4">
+            <div class="border border-white-0_5 p-4 text-center text-white rounded">
+              <h2 class="display-4 font-weight-bold">980</h2>
+              <p> Heures de Formation </p>
             </div>
           </div>
-        </div>
-      </div> <!-- END row-->
-    </div> <!-- END container-->
-  </section>
-  <section class="padding-y-30" style="background:url(/front/assets/img/college/2.jpg) no-repeat">
-    <div class="container col-12 row">
-      <div class="row align-items-center height-150p py-4 col-8">
-        <div class="col-8 align-items-center text-center card p-4 col clockinner1 clockinner margin-y-20" style="margin-left:18%">
-        <h1><b>Inscription pour la Cohorte #3 dans!!</b></h1>
-        </div>
-        <div class="col-lg-10 mx-auto">
-          <div class="card-deck text-center" data-countdown="2019/09/09" id="clockdiv">
-            <div class="card p-4 col clockinner1 clockinner">
-              <h2 class="countdown-days display-4 days">00</h2>
-              <span>Jours</span>
-            </div>
-            <div class="card p-4 col clockinner1 clockinner">
-              <h2 class="countdown-hours display-4 hours">00</h2>
-              <span>Heures</span>
-            </div>
-            <div class="card p-4 col clockinner1 clockinner">
-              <h2 class="countdown-minutes display-4 minutes">00</h2>
-              <span>Minutes</span>
-            </div>
-            <div class="card p-4 col clockinner1 clockinner">
-              <h2 class="countdown-seconds display-4 seconds">00</h2>
-              <span class="display-7">Seconds</span>
+
+          <div class="col-lg-3 col-md-6 mt-4">
+            <div class="border border-white-0_5 p-4 text-center text-white rounded">
+              <h2 class="display-4 font-weight-bold">50+</h2>
+              <p> Creative Inner Pages </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row col-4 text-center padding-y-30">
-      <div class="row mt-5 card p-4">
-             <div class="col-md-12">
-               <h4 class="mb-5">
-                  Restez informé de la nouvel rentrée.
-               </h4>
-               <form action="{{ path('abonne_newlester_new') }}" method="post">
-               <div class="input-group input-group--focus mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text rounded-0 bg-white ti-email"></span>
+
+          <div class="col-lg-3 col-md-6 mt-4">
+            <div class="border border-white-0_5 p-4 text-center text-white rounded">
+              <h2 class="display-4 font-weight-bold">200+</h2>
+              <p> Reusable Elements </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4">
+            <div class="border border-white-0_5 p-4 text-center text-white rounded">
+              <h2 class="display-4 font-weight-bold">96+</h2>
+              <p> HTML Pages </p>
+            </div>
+          </div>
+
+        </div> <!-- END row-->
+      </div> <!-- END container-->
+    <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;"><div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url(&quot;file:///var/www/project/Sonatel%20Academy/educati/assets/img/1920x800/4.jpg&quot;); position: fixed; top: 0px; left: 0px; width: 1351px; height: 1007px; overflow: hidden; pointer-events: none; margin-top: -318px; transform: translate3d(0px, 106px, 0px);"></div></div></section>
+    <p></p>
+    {% if events %}
+    <section class="padding-y-100" style="background:url(/front/assets/img/1920/Evenement.png) no-repeat">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-12 text-center text-white mb-md-4">
+            <h2 class="mb-4"> Événements à venir </h2>
+            <div class="width-3rem height-4 rounded bg-white mx-auto"></div>
+          </div>
+          {% for event in events|slice(0, 3) %}
+          <div class="col-md-4 mt-4">
+            <div class="card">
+              <img class="card-img-top" src="/uploads/events/{{ event.photo }}" alt="">
+              <div class="card-body">
+                <h4 class="h5">
+                  {{ event.libelle }}
+                </h4>
+                <ul class="list-unstyled my-4 line-height-xl">
+                  <li>
+                    <i class="ti-time mr-2 text-primary"></i>
+                    {{ event.date|date("m/d/Y")  }} à {{ event.date|date("H:m") }}
+                  </li>
+                  <li>
+                    <i class="ti-location-pin mr-2 text-primary"></i>
+                    {{ event.lieu }}
+                  </li>
+                </ul>
+                <a href="#" class="text-primary">  Voir details  <i class="ti-angle-double-right small"></i>
+                </a>
+              </div>
+            </div>
+          </div>{% endfor %} <!-- END col-md-4-->
+      
+        </div> <!-- END row-->
+      </div> <!-- END container-->
+    </section>
+    {% else %}
+    {% endif %}
+
+    <section class="padding-y-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-md-4">
+            <h2 class="mb-4"> Academy Life </h2>
+            <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
+          </div>
+        </div> <!-- END row-->
+        <div class="row">
+          <div class="col-lg-6 marginTop-30">
+            <img class="w-100" src="/front/assets/img/555x490/Academy-LifePlan-de-travail-1.png" alt="">
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-md-6 marginTop-30">
+                <div class="position-relative">
+                  <img class="w-100" src="/front/assets/img/262x230/Academy-LifePlan-de-travail-1-copie.png" alt="">
+                  <a href="https://www.youtube.com/watch?v=JRLS-ctFHO8" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
+                    <i class="ti-control-play text-primary"></i>
+                  </a>
                 </div>
-                <input type="text" class="form-control rounded-0" placeholder="apprenant@sonatelacademy.sn" name="email">
               </div>
-              <button class="btn btn-success active mr-2 mb-3" type="submit">S'inscrire</button>
-              </form>
-             </div>
+              <div class="col-md-6 marginTop-30">
+                <div class="position-relative">
+                  <img class="w-100" src="/front/assets/img/262x230/Academy-LifePlan-de-travail-1-copie-2.png" alt="">
+                  <a href="https://www.youtube.com/watch?v=1q0V58BPPiY" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
+                    <i class="ti-control-play text-primary"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 marginTop-30">
+                <div class="position-relative">
+                  <img class="w-100" src="/front/assets/img/262x230/Academy-LifePlan-de-travail-1-copie-3_1.png" alt="">
+                  <a href="https://www.youtube.com/watch?v=AOoZRA4fzBE" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
+                    <i class="ti-control-play text-primary"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 marginTop-30">
+                <div class="position-relative">
+                  <img class="w-100" src="/front/assets/img/262x230/Academy-LifePlan-de-travail-1-copie-3_2.png" alt="">
+                  <a href="https://www.youtube.com/watch?v=oPCZOR6sVf8" data-fancybox="" class="position-absolute absolute-center iconbox iconbox-lg bg-white ">
+                    <i class="ti-control-play text-primary"></i>
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
+        </div> <!-- END row-->
+      </div> <!-- END container-->
+    </section>
+    <section class="padding-y-30" style="background:url(/front/assets/img/college/Inscription.png) no-repeat">
+      <div class="container col-12 row">
+        <div class="row align-items-center height-150p py-4 col-8">
+          <div class="col-8 align-items-center text-center card p-4 col clockinner1 clockinner margin-y-20" style="margin-left:18%">
+            <h1><b>Inscription pour la Cohorte #3 dans..</b></h1>
+          </div>
+          <div class="col-lg-10 mx-auto">
+            <div class="card-deck text-center" data-countdown="2019/06/09" id="clockdiv">
+              <div class="card p-4 col clockinner1 clockinner">
+                <h2 class="countdown-days display-4 days">00</h2>
+                <span>Jours</span>
+              </div>
+              <div class="card p-4 col clockinner1 clockinner">
+                <h2 class="countdown-hours display-4 hours">00</h2>
+                <span>Heures</span>
+              </div>
+              <div class="card p-4 col clockinner1 clockinner">
+                <h2 class="countdown-minutes display-4 minutes">00</h2>
+                <span>Minutes</span>
+              </div>
+              <div class="card p-4 col clockinner1 clockinner">
+                <h2 class="countdown-seconds display-4 seconds">00</h2>
+                <span class="display-7">Seconds</span>
+              </div>
+            </div>
+          </div>
         </div>
-
-    </div>
-  </section>
-<section class="padding-y-100 bg-cover" data-dark-overlay="6" style="background:url(/front/assets/img/college/2.jpg) no-repeat">
-  <div class="container">
-    <div class="row text-center text-white">
-
-      <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;">
-        <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="520" data-speed="3000">520</p>
-        <p class="lead">
-          Online Courses
-        </p>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">
-        <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="690" data-speed="3000">690</p>
-        <p class="lead">
-          Trusted Tutors
-        </p>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
-        <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="485645" data-speed="3000">485645</p>
-        <p class="lead">
-          Online Students
-        </p>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-        <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="5409" data-speed="3000">5409</p>
-        <p class="lead">
-          Success Stories
-        </p>
-      </div>
-
-    </div> <!-- END row-->
-
-  </div> <!-- END container-->
-
-</section>
-  <section class="paddingTop-100">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="mb-4">
-            Galerie
-          </h2>
-          <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
+        <div class="row col-4 text-center padding-y-30">
+          <div class="row mt-5 card p-4">
+            <div class="col-md-12">
+              <h4 class="mb-5"> Tu veux nous rejoindre ? </h4>
+              <form action="{{ path('abonne_newlester_new') }}" method="post">
+                <div class="input-group input-group--focus mb-3">
+                  
+                </div>
+                <button class="btn btn-success active mr-2 mb-3" type="submit">Cliques ici !!</button>
+              </form>
+            </div>
+          </div>
         </div>
-      </div> <!-- END row-->
+      </div>
+    </section>
+    <section class="padding-y-100 bg-cover" data-dark-overlay="6" style="background:url(/front/assets/img/college/Inscription.png) no-repeat">
+      <div class="container">
+        <div class="row text-center text-white">
 
-      <div class="row marginTop-60">
-        <div class="owl-carousel arrow-edge arrow-black owl-loaded owl-drag" data-space="0" data-items="4" data-arrow="true" data-tablet-items="2" data-mobile-items="1">
+          <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;">
+            <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="520" data-speed="3000">520</p>
+            <p class="lead">
+              Online Courses
+            </p>
+          </div>
 
+          <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">
+            <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="690" data-speed="3000">690</p>
+            <p class="lead"> Trusted Tutors </p>
+          </div>
 
+          <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
+            <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="485645" data-speed="3000">485645</p>
+            <p class="lead"> Online Students </p>
+          </div>
 
+          <div class="col-lg-3 col-md-6 mt-5 wow zoomIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
+            <p class="ec-counter display-4 text-primary font-weight-semiBold mb-0" data-to="5409" data-speed="3000"> 5409 </p>
+            <p class="lead"> Success Stories </p>
+          </div>
 
+        </div> <!-- END row-->
 
+      </div> <!-- END container-->
 
+    </section>
+    <section class="paddingTop-100">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">
+              Galerie
+            </h2>
+            <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
+          </div>
+        </div> <!-- END row-->
 
-          <div class="owl-stage-outer null"><div class="owl-stage" style="transform: translate3d(-3377px, 0px, 0px); transition: all 0.8s ease 0s; width: 5067px;"><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+        <div class="row marginTop-60">
+          <div class="owl-carousel arrow-edge arrow-black owl-loaded owl-drag" data-space="0" data-items="4" data-arrow="true" data-tablet-items="2" data-mobile-items="1">
+            {# <div class="owl-stage-outer null">
+              <div class="owl-stage" style="transform: translate3d(-3377px, 0px, 0px); transition: all 0.8s ease 0s; width: 5067px;">
+                <div class="owl-item cloned" style="width: 337.75px;">
+                  <div class="hover:parent">
+                    <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
+                    <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                      <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                    </div>
                   </div>
-                </div></div><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/5.jpg" alt="">
+                </div>
+              </div>
+            </div> #}
+            <div class="owl-item cloned" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/5.jpg" alt="">
                   <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
                     <a href="/front/assets/img/384x320/5.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
                   </div>
-                </div></div><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/3.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/3.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/5.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/5.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item active" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item cloned active" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item cloned active" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item cloned active" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/3.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/3.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div><div class="owl-item cloned" style="width: 337.75px;"><div class="hover:parent">
-                  <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
-                  <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
-                    <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
-                  </div>
-                </div></div></div></div><div class="owl-nav"><div class="owl-prev"><i class="ti-angle-left"></i></div><div class="owl-next"><i class="ti-angle-right"></i></div></div><div class="owl-dots false disabled"></div></div>
-      </div> <!-- END row-->
+              </div>
+            </div>
 
-    </div> <!-- END container-->
-  </section>
-  {% if partenaires %}
-<section class="paddingTop-70 paddingBottom-100 bg-light-v3">
+            <div class="owl-item cloned" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item cloned" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/3.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/3.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/5.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/5.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item active" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item cloned active" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/1.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/1.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item cloned active" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/2.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/2.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item cloned active" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/3.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/3.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="owl-item cloned" style="width: 337.75px;">
+              <div class="hover:parent">
+                <img class="w-100 transition-0_3 hover:zoomin" src="/front/assets/img/384x320/4.jpg" alt="">
+                <div class="card-img-overlay transition-0_3 flex-center bg-black-0_7 hover:show">
+                  <a href="/front/assets/img/384x320/4.jpg" data-fancybox="gallery1" class="iconbox iconbox-md bg-white ti-zoom-in text-primary"></a>
+                </div>
+              </div>
+            </div>
+            </div></div><div class="owl-nav"><div class="owl-prev"><i class="ti-angle-left"></i></div><div class="owl-next"><i class="ti-angle-right"></i></div></div><div class="owl-dots false disabled"></div></div>
+        </div> <!-- END row-->
+
+      </div> <!-- END container-->
+    </section>
+    {% if partenaires %}
+  <section class="paddingTop-70 paddingBottom-100 bg-light-v3">
   <div class="container">
     <div class="row text-center align-items-center">
       {% for partenaire in partenaires %}
@@ -360,13 +385,11 @@
 
 
 <section class=" padding-y-100 bg-black-0_9">
-    <div class="container">
+  <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-5 mr-auto my-4 text-white wow slideInUp" style="visibility: visible; animation-name: slideInUp;">
         <h2>S'inscrire à notre <span class="text-primary">Newsletter</span></h2>
-        <p class="lead">
-          Rester informé de tout ce qui passe à l'academy
-        </p>
+       
       </div>
 
       <div class="col-md-6 my-4 wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
@@ -385,6 +408,6 @@
       </div>
 
     </div> <!-- END row-->
-    </div>
-  </section>
+  </div>
+</section>
 {% endblock %}

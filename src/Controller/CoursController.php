@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * @Route("/cours")
@@ -21,6 +22,17 @@ class CoursController extends AbstractController
     public function index(CoursRepository $coursRepository): Response
     {
         return $this->render('cours/index.html.twig', [
+            'cours' => $coursRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/admin", name="index_admin", methods={"GET"})
+     * @Security("is_granted('ROLE_ADMIN')")
+     */
+    public function indexAdmin(CoursRepository $coursRepository): Response
+    {
+        return $this->render('cours/index_admin.html.twig', [
             'cours' => $coursRepository->findAll(),
         ]);
     }

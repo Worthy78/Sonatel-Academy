@@ -40,7 +40,7 @@ $colors: (
       base:#fd3635
     ),
     yellow:(
-      base:#faae2f
+      base:#ff6600
     ),
     cyan:(
       base:#369bfd
@@ -50,6 +50,9 @@ $colors: (
     ),
     white:(
       base:#fff
+    ),
+    warning:(
+      base:#ff6600
     ),
     black:(
       base:#1e2022
@@ -61,7 +64,7 @@ $theme-colors:(
   primary: color(primary, base),
   success:color(green, base),
   info:color(cyan, base),
-  warning:color(yellow, base),
+  warning:color(warning, base),
   danger:color(red, base),
   light: color(gray, base),
   dark:color(black, base),

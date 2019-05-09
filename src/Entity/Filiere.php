@@ -34,13 +34,12 @@ class Filiere
     private $modules;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Apprenant", mappedBy="fili�sere")
+     * @ORM\OneToMany(targetEntity="App\Entity\Apprenant", mappedBy="filiere")
      */
     private $apprenants;
 
     public function __construct()
     {
-        $this->modules = new ArrayCollection();
         $this->apprenants = new ArrayCollection();
     }
 
@@ -116,7 +115,7 @@ class Filiere
     {
         if (!$this->apprenants->contains($apprenant)) {
             $this->apprenants[] = $apprenant;
-            $apprenant->setFili�ere($this);
+            $apprenant->setFiliere($this);
         }
 
         return $this;
@@ -127,11 +126,16 @@ class Filiere
         if ($this->apprenants->contains($apprenant)) {
             $this->apprenants->removeElement($apprenant);
             // set the owning side to null (unless already changed)
-            if ($apprenant->getFili�ere() === $this) {
-                $apprenant->setFili�ere(null);
+            if ($apprenant->getFiliere() === $this) {
+                $apprenant->setFiliere(null);
             }
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->libelle;
     }
 }

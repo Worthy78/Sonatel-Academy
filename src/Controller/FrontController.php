@@ -11,11 +11,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class FrontController extends AbstractController
 {
     /**
-     * @Route("/front", name="front")
+     * @Route("/", name="front")
      */
     public function index()
     {
-            $partenaires = $this->getDoctrine()->getRepository(Partenaire::class)->findAll();
+        $partenaires = $this->getDoctrine()->getRepository(Partenaire::class)->findAll();
         $events = $this->getDoctrine()->getRepository(Event::class)->findAll();
         return $this->render('front/index.html.twig', [
             'partenaires'=>$partenaires,
@@ -82,5 +82,13 @@ class FrontController extends AbstractController
     public function postBlog()
     {
         return $this->render('front/blog/post.html.twig');
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        return $this->render('front/page-contact.html.twig');
     }
 }

@@ -2,19 +2,23 @@
 
 namespace App\Controller;
 
-use App\Entity\Event;
 use App\Entity\Cours;
+use App\Entity\Event;
+use App\Entity\Cohorte;
 use App\Form\CoursType;
+use App\Form\CohorteType;
 use App\Repository\CoursRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminController extends AbstractController
 {
     /**
      * @Route("/admin", name="admin")
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index()
     {
@@ -63,4 +67,30 @@ class AdminController extends AbstractController
 
         ]);
     }
+
+
+     /**
+     * @Route("/admin/cohorte", name="cohorte_new", methods={"GET","POST"})
+     */
+    public function Cohorte(Request $request): Response
+    {
+        $cohorte = new Cohorte();
+        $form = $this->createForm(CohorteType::class, $cohorte);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($cohorte);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('cohorte_index');
+        }
+
+        return $this->render('admin/cohorte_new.html.twig', [
+            'cohorte' => $cohorte,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    
 }

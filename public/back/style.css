@@ -2614,7 +2614,7 @@ li.multipleInput-email {
     border-radius: 2px;
 }
 li.multipleInput-email a{
-    background: #none;
+    background: #fff;
     color: #fff;
     margin-left: 4px;
     display: inline-block;
@@ -2977,7 +2977,7 @@ td.text-right.mail-date {
 .form-control {
     background-color: #FFFFFF;
     background-image: none;
-    border: 1px solid #e5e6e7;
+    border: 1px solid #303030;
     border-radius: 1px;
     color: inherit;
     display: block;

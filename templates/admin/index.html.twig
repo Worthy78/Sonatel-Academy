@@ -73,21 +73,23 @@
                                     <th>Date</th>
                                     <th>Action</th>
                                 </tr>
-                                {% for event in events %}
-                                    <tr>
-                                        <td>{{ event.id }}</td>
-                                        <td><img src="img/product/book-1.jpg" alt=""></td>
-                                        <td>{{ event.libelle }}</td>
-                                        <td>
-                                            <button class="pd-setting">{{ event.etat }}</button>
-                                        </td>
-                                        <td>{{ event.date|date("m/d/Y")  }} à {{ event.date|date("H:m") }}</td>
-                                        <td>
-                                            <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                            <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                        </td>
-                                    </tr>
-                                {% endfor %}
+                                {% if events is defined %}
+                                  {% for event in events %}
+                                      <tr>
+                                          <td>{{ event.id }}</td>
+                                          <td><img src="img/product/book-1.jpg" alt=""></td>
+                                          <td>{{ event.libelle }}</td>
+                                          <td>
+                                              <button class="pd-setting">{{ event.etat }}</button>
+                                          </td>
+                                          <td>{{ event.date|date("m/d/Y")  }} à {{ event.date|date("H:m") }}</td>
+                                          <td>
+                                              <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                              <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                          </td>
+                                      </tr>
+                                  {% endfor %}
+                                {% endif %}
                                 </tbody></table>
                         </div>
                         <div class="custom-pagination">

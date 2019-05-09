@@ -6,7 +6,7 @@
 //////////////////////////////////////////////////
 ///////////////// Helper variables
 // ///////////////////////////////////////////////
-var $assetsPath ='assets/vendor',
+var $assetsPath ='front/assets/vendor',
      $window = $(window),
      $windowHeight = $(window).height(),
      $windowWidth = $(window).width(),

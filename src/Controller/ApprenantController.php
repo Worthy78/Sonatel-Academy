@@ -2,24 +2,50 @@
 
 namespace App\Controller;
 
+use App\GestionDeslogs;
 use App\Entity\Apprenant;
 use App\Form\ApprenantType;
 use App\Repository\ApprenantRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security as Secur;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("/apprenant")
  */
 class ApprenantController extends AbstractController
 {
+    const INFO = 'info';
+
+     /**
+     * @param Secur $security
+     */
+    public function __construct(GestionDeslogs $logger, Secur $security)
+    {
+        $this->userLogger = $logger;
+
+        if (is_object($security->getToken()->getUser())) {
+            $user = $security->getToken()->getUser();
+        }
+
+    }
+
+    public function getRequest()
+    {
+        return $this->container->get('request_stack')->getCurrentRequest();
+    }
+
     /**
      * @Route("/", name="apprenant_index", methods={"GET"})
      */
     public function index(ApprenantRepository $apprenantRepository): Response
     {
+        $this->userLogger->addLogg(self::INFO, $this->getRequest(), $this->getUser(), 'Visualisation de la liste des apprenants.');
+
         return $this->render('apprenant/index.html.twig', [
             'apprenants' => $apprenantRepository->findAll(),
         ]);
@@ -27,33 +53,45 @@ class ApprenantController extends AbstractController
 
     /**
      * @Route("/new", name="apprenant_new", methods={"GET","POST"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function new(Request $request, ApprenantRepository $apprenantRepository): Response
+    public function new(Request $request, UserPasswordEncoderInterface $passwordEncoder, \Swift_Mailer $mailer): Response
     {
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*%/";
         $apprenant = new Apprenant();
         $form = $this->createForm(ApprenantType::class, $apprenant);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $file1 = $apprenant->getPhoto();
-            $file2 = $apprenant->getCv();
-            $fileName1 = md5(uniqid()).'.'.$file1->guessExtension();
-            $fileName2 = md5(uniqid()).'.'.$file2->guessExtension();
-            $file1->move($this->getParameter('upload_apprenant'), $fileName1);
-            $file2->move($this->getParameter('upload_apprenant_cv'), $fileName2);
-            $apprenant->setPhoto($fileName1);
-            $apprenant->setcv($fileName2);
+            $psswd = substr( str_shuffle( $chars ), 0, 8 );
+            $password = $passwordEncoder->encodePassword($apprenant->getCompte(), $psswd);
+            $apprenant->getCompte()->setPassword($password);
+            $apprenant->getCompte()->setMatricule('tmp32758');
+            $apprenant->getCompte()->setRoles(['ROLE_APPRENANT']);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($apprenant);
             $entityManager->flush();
+            $message = (new \Swift_Message('Sonatel Academy'))
+                ->setFrom('aumonesmailer@gmail.com')
+                ->setTo($apprenant->getCompte()->getEmail())
+                ->setBody(
+                    $this->renderView(
+                        'registration/mail.html.twig', [
+                            'email' => $apprenant->getCompte()->getEmail(),
+                            'password' => $psswd,
+                            
+                        ]
+                    )
+                    ,'text/html'
+                );
 
-            return $this->redirectToRoute('apprenant_new');
+                $rponse = $mailer->send($message);
+
+            return $this->redirectToRoute('apprenant_index');
         }
 
-        return $this->render('apprenant/index_admin.html.twig', [
+        return $this->render('apprenant/new.html.twig', [
             'apprenant' => $apprenant,
             'form' => $form->createView(),
-            'apprenants' => $apprenantRepository->findAll(),
         ]);
     }
 
@@ -63,16 +101,6 @@ class ApprenantController extends AbstractController
     public function show(Apprenant $apprenant): Response
     {
         return $this->render('apprenant/show.html.twig', [
-            'apprenant' => $apprenant,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/veup", name="apprenant_show_front", methods={"GET"})
-     */
-    public function showFront(Apprenant $apprenant): Response
-    {
-        return $this->render('apprenant/show_front.html.twig', [
             'apprenant' => $apprenant,
         ]);
     }
