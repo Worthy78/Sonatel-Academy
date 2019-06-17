@@ -5,7 +5,7 @@
     <div class="container">
      <div class="row align-items-center">
        <div class="col-md-6">
-         <h2>Blog</h2>
+         <h2>Galeries</h2>
        </div>
        <div class="col-md-6">
         <ol class="breadcrumb justify-content-md-end bg-transparent">  
@@ -13,10 +13,10 @@
             <a href="blog-standard.html#">Accueil</a>
           </li> 
           <li class="breadcrumb-item">
-            <a href="blog-standard.html#"> Blog</a>
+            <a href="blog-standard.html#"> Galerie</a>
           </li>
           <li class="breadcrumb-item">
-            Tous les postes
+            Tous les photos
           </li>
         </ol>
        </div>
@@ -26,200 +26,184 @@
 
 
 
-  <section class="pt-5 paddingBottom-100">
-     <div class="container">
-       <div class="row">
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/1.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">PHP &amp; My SQL</a>
-              <a href="{{ path("blog_post")}}" class="h4 my-2">
-                Expand Your Programming Knowledge
+<section class="padding-y-100 border-bottom border-light">
+  <div class="container">
+    <div class="row">
+     <div class="col-12 text-center mb-5">
+       <h4>Gallery - <span class="text-primary">01</span></h4>
+     </div>
+      <div class="col-12 text-center">
+        <ul class="nav tab-line tab-line--2x border-bottom mb-4 nav-isotop-filter">
+          <a class="nav-item nav-link active" href="element-gallery.html#" data-filter="*">
+            All
+          </a>
+          <a class="nav-item nav-link" href="element-gallery.html#" data-filter=".creative">
+            Creative 
+          </a>
+          <a class="nav-item nav-link" href="element-gallery.html#" data-filter=".corporate">
+            Corporate 
+          </a>
+          <a class="nav-item nav-link" href="element-gallery.html#" data-filter=".ui-ux">
+            UI/UX 
+          </a>
+          <a class="nav-item nav-link" href="element-gallery.html#" data-filter=".web-design">
+            Web Design 
+          </a>
+       </ul>
+      </div> <!-- END col-12 -->
+    </div> <!-- END row-->
+    <div class="row isotop-filter">
+      <div class="col-lg-4 col-md-6 marginTop-30 creative">
+        <div class="media-viewer">
+          <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+          <div class="media-viewer__overlay bg-black-0_7 flex-center">
+            <a href="assets/img/360x300/1.jpg" class="iconbox bg-white" data-fancybox="gallery">
+              <i class="ti-search"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 marginTop-30 corporate creative">
+        <div class="media-viewer">
+          <img class="media-viewer__media" src="assets/img/360x300/2.jpg" alt="">
+          <div class="media-viewer__overlay bg-black-0_7 flex-center">
+            <a href="assets/img/360x300/2.jpg" class="iconbox bg-white" data-fancybox="gallery">
+              <i class="ti-search"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 marginTop-30 ui-ux">
+        <div class="media-viewer">
+          <img class="media-viewer__media" src="assets/img/360x300/3.jpg" alt="">
+          <div class="media-viewer__overlay bg-black-0_7 flex-center">
+            <a href="assets/img/360x300/3.jpg" class="iconbox bg-white" data-fancybox="gallery">
+              <i class="ti-search"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 marginTop-30 web-design corporate">
+        <div class="media-viewer">
+          <img class="media-viewer__media" src="assets/img/360x300/4.jpg" alt="">
+          <div class="media-viewer__overlay bg-black-0_7 flex-center">
+            <a href="assets/img/360x300/4.jpg" class="iconbox bg-white" data-fancybox="gallery">
+              <i class="ti-search"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 marginTop-30 creative ui-ux">
+        <div class="media-viewer">
+          <img class="media-viewer__media" src="assets/img/360x300/5.jpg" alt="">
+          <div class="media-viewer__overlay bg-black-0_7 flex-center">
+            <a href="assets/img/360x300/5.jpg" class="iconbox bg-white" data-fancybox="gallery">
+              <i class="ti-search"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 marginTop-30 corporate web-design">
+        <div class="media-viewer">
+          <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+          <div class="media-viewer__overlay bg-black-0_7 flex-center">
+            <a href="assets/img/360x300/6.jpg" class="iconbox bg-white" data-fancybox="gallery">
+              <i class="ti-search"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div> <!-- END row-->
+  </div> <!-- END container-->
+</section>
+<section class="padding-y-100 border-bottom border-light">
+  <div class="container">
+    <div class="row">
+     <div class="col-12 text-center mb-5">
+       <h4>Gallery - <span class="text-primary">02</span></h4>
+     </div>
+     <div class="col-12">
+       <div class="owl-carousel owl-loaded owl-drag" data-space="30" data-arrow="true">
+         
+         
+         
+         
+       <div class="owl-stage-outer null"><div class="owl-stage" style="transform: translate3d(-2280px, 0px, 0px); transition: all 0.8s ease 0s; width: 3800px;"><div class="owl-item cloned" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/2.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                28 Mar, 2018 - by <a class="text-primary" href="blog-standard.html#">Alex</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/2.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">Programming</a>
-              <a href="blog-standard.html#" class="h4 my-2">
-                The Ultimate Guide to Game Development
+          </div></div><div class="owl-item cloned" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/3.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                 30 Mar, 2018 - by <a class="text-primary" href="blog-standard.html#">John doe</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/3.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">Corporate</a>
-              <a href="blog-standard.html#" class="h4 my-2">
-                How to Incorporate This One Employee
+          </div></div><div class="owl-item cloned" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/4.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                 6 Apr, 2018 - by <a class="text-primary" href="blog-standard.html#">Anthony Brooks</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/2.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">PHP &amp; My SQL</a>
-              <a href="blog-standard.html#" class="h4 my-2">
-                Expand Your Programming Knowledge
+          </div></div><div class="owl-item" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/1.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                28 Mar, 2018 - by <a class="text-primary" href="blog-standard.html#">Alex</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/3.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">Programming</a>
-              <a href="blog-standard.html#" class="h4 my-2">
-                The Ultimate Guide to Game Development
+          </div></div><div class="owl-item" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/2.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                 30 Mar, 2018 - by <a class="text-primary" href="blog-standard.html#">John doe</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/1.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">Corporate</a>
-              <a href="blog-standard.html#" class="h4 my-2">
-                How to Incorporate This One Employee
+          </div></div><div class="owl-item" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/3.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                 6 Apr, 2018 - by <a class="text-primary" href="blog-standard.html#">Anthony Brooks</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/1.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">PHP &amp; My SQL</a>
-              <a href="blog-standard.html#" class="h4 my-2">
-                Expand Your Programming Knowledge
+          </div></div><div class="owl-item active" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/4.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                28 Mar, 2018 - by <a class="text-primary" href="blog-standard.html#">Alex</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/2.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">Programming</a>
-              <a href="blog-standard.html#" class="h4 my-2">
-                The Ultimate Guide to Game Development
+          </div></div><div class="owl-item cloned active" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/1.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                 30 Mar, 2018 - by <a class="text-primary" href="blog-standard.html#">John doe</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-        
-         <div class="col-lg-4 col-md-6 marginTop-30">
-           <article class="card">
-           <div class="card-img">
-            <a href="blog-standard.html">
-              <img class="rounded w-100" src="assets/img/blog/standard/3.jpg" alt="">
-            </a>             
-           </div>
-            <div class="card-body px-0">
-              <a class="text-primary" href="blog-standard.html#">Corporate</a>
-              <a href="blog-standard.html#" class="h4 my-2">
-                How to Incorporate This One Employee
+          </div></div><div class="owl-item cloned active" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/2.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-              <p>
-                 6 Apr, 2018 - by <a class="text-primary" href="blog-standard.html#">Anthony Brooks</a>
-              </p>
             </div>
-           </article>
-          </div> <!-- END col-lg-4 col-md-6 -->
-          
-          <div class="col-12 marginTop-70">
-           <ul class="pagination pagination-primary align-items-center justify-content-center">
-            <li class="page-item mx-2">
-              <a href="blog-standard.html#">
-                <i class="ti-arrow-left small mr-2"></i>
-                Previous
+          </div></div><div class="owl-item cloned" style="width: 350px; margin-right: 30px;"><div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/3.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
               </a>
-            </li>
-            <li class="page-item mx-2 font-weight-bold">2/45</li>
-            <li class="page-item mx-2">
-              <a href="blog-standard.html#">
-                Next
-                <i class="ti-arrow-right small ml-2"></i>
-              </a>
-            </li>
-          </ul>
-         </div>
-       </div> <!-- END row-->
-     </div> <!-- END container-->
-   </section>
+            </div>
+          </div></div></div></div><div class="owl-nav"><div class="owl-prev"><i class="ti-angle-left"></i></div><div class="owl-next"><i class="ti-angle-right"></i></div></div><div class="owl-dots false disabled"></div></div>
+     </div>
+    </div> <!-- END row-->
+  </div> <!-- END container-->
+</section>
+
+
 
 {% endblock %}
