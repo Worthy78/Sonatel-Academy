@@ -47,7 +47,11 @@ class CoursController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+          $file = $cour->getPhoto();
+          $fileName = md5(uniqid()).'.'.$file->guessExtension();
+          $file->move($this->getParameter('upload_cours'), $fileName);
             $entityManager = $this->getDoctrine()->getManager();
+            $cour->setPhoto($fileName);
             $entityManager->persist($cour);
             $entityManager->flush();
 

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Cours;
+use App\Entity\Apprenant;
 use App\Entity\Event;
 use App\Entity\Partenaire;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,6 +22,17 @@ class FrontController extends AbstractController
             'partenaires'=>$partenaires,
             'events' => $events
         ]);
+    }
+
+    /**
+    * @Route("front/cvtheque", name="cvtheque")
+    */
+    public function cvtheque(){
+      $apprenants = $this->getDoctrine()->getRepository(Apprenant::class)->findAll();
+
+      return $this->render('front/cvtheque/index.html.twig', [
+          'apprenants'=>$apprenants
+      ]);
     }
 
     /**
