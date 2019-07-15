@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="padding-y-60 bg-cover" data-dark-overlay="6" style="background:url(/front/assets/img/breadcrumb-bg.jpg) no-repeat"></div>
+{{ form_start(form, {'attr': {'class': 'border', 'id': 'formAddCandidat', "enctype": "multipart/form-data"}}) }}              
+    <div class="row">
+            <div class="col-md-1"></div>
+            <div class="form-group col-md-5">
+                <label><span class="etoil">*</span> Prénom <i class="fa fa-file i"></i></label>
+                {{ form_widget(form.Prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col-md-1"></div>
+            <div class="form-group col-md-5">
+                <label> Nom <i class="md-more"></i></label> 
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}, 'required': false}) }}
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label><span class="etoil">*</span> Date de naissance <i class="fa fa-file i"></i></label>
+            {{ form_widget(form.dateNaissance, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label> Lieu de naissance <i class="md-more"></i></label> 
+            {{ form_widget(form.lieuNaissance, {'attr': {'class': 'form-control'}, 'required': false}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label><span class="etoil">*</span> Numéro de telephone <i class="fa fa-file i"></i></label>
+            {{ form_widget(form.telephone, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label> Adresse email <i class="md-more"></i></label> 
+            {{ form_widget(form.email, {'attr': {'class': 'form-control'}, 'required': false}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label><span class="etoil">*</span> Niveau d'étude <i class="fa fa-file i"></i></label>
+            {{ form_widget(form.NiveauEtude, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label> formation souhaite <i class="md-more"></i></label> 
+            {{ form_widget(form.formationSouhaite, {'attr': {'class': 'form-control'}, 'required': false}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label><span class="etoil">*</span> Référentiel choisit <i class="fa fa-file i"></i></label>
+            {{ form_widget(form.referentielChoisit, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label> travaillez Vous ?<i class="md-more"></i></label> 
+            {{ form_widget(form.travaillezVous, {'attr': {'class': 'form-control'}, 'required': false}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label><span class="etoil">*</span> Si oui dans quel domaine <i class="fa fa-file i"></i></label>
+            {{ form_widget(form.domaineTravail, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label> Joindre votre CV<i class="md-more"></i></label> 
+            {{ form_widget(form.cv, {'attr': {'class': 'form-control'}, 'required': false}) }}
+        </div>
+    </div>
+{{ form_end(form) }}
+{% endblock %}

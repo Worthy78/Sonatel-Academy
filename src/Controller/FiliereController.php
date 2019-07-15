@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Filiere;
 use App\Form\FiliereType;
+use App\Entity\Candidature;
+use App\Form\CandidatureType;
 use App\Repository\FiliereRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/filiere")
@@ -93,4 +95,7 @@ class FiliereController extends AbstractController
 
         return $this->redirectToRoute('filiere_index');
     }
+
+
+    
 }

@@ -3,11 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\Cours;
-use App\Entity\Apprenant;
 use App\Entity\Event;
+use App\Entity\Apprenant;
 use App\Entity\Partenaire;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Candidature;
+use App\Form\CandidatureType;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class FrontController extends AbstractController
 {
@@ -102,5 +106,28 @@ class FrontController extends AbstractController
     public function contact()
     {
         return $this->render('front/page-contact.html.twig');
+    }
+
+    /**
+     * @Route("/candidature", name="candidature", methods={"GET","POST"})
+     */
+    public function candidature(Request $request): Response
+    {
+        $candidature = new Candidature();
+        $form = $this->createForm(CandidatureType::class, $candidature);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($candidature);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('filiere_index');
+        }
+
+        return $this->render('front/candidature.html.twig', [
+            'candidat' => $candidature,
+            'form' => $form->createView(),
+        ]);
     }
 }
